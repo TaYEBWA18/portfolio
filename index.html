@@ -6,6 +6,12 @@
   <title>Tayebwa Simon</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Add preconnect for external resources -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <!-- Add preload for critical images -->
+  <link rel="preload" as="image" href="https://www.pinterest.com/pin/3799980929976627/" fetchpriority="high">
   <script>
   tailwind.config = {
     theme: {
@@ -230,7 +236,13 @@
       <div class="absolute w-64 md:w-72 h-64 md:h-72 bg-white opacity-10 rounded-full -z-10"></div>
       <!-- Main Image -->
       <div class="relative">
-        <img src="https://www.pinterest.com/pin/3799980929976627/" alt="keed" class="w-64 md:w-72 h-64 md:h-72 object-cover rounded-2xl shadow-lg border-4 border-white" />
+        <img 
+          src="https://www.pinterest.com/pin/3799980929976627/" 
+          alt="keed" 
+          class="w-64 md:w-72 h-64 md:h-72 object-cover rounded-2xl shadow-lg border-4 border-white"
+          loading="eager"
+          fetchpriority="high"
+        />
         <!-- Skill Badges -->
         <span class="absolute top-4 left-0 bg-accent-500 text-accent-400 font-bold px-4 py-1 rounded-lg shadow-lg">Ai</span>
         <span class="absolute top-10 right-0 bg-primary-500 text-primary-400 font-bold px-4 py-1 rounded-lg shadow-lg">Ps</span>
@@ -308,7 +320,13 @@
             <!-- Portfolio Item 1 -->
             <div class="portfolio-item group youtube" data-category="youtube">
                 <div class="relative overflow-hidden rounded-lg">
-                    <img src="https://placehold.co/600x400/dc2626/ffffff" alt="Portfolio 1" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img 
+                      src="https://placehold.co/600x400/dc2626/ffffff" 
+                      alt="Portfolio 1" 
+                      class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
                             <h4 class="text-white text-xl font-bold mb-2">Creative Design</h4>
@@ -321,7 +339,13 @@
             <!-- Portfolio Item 2 -->
             <div class="portfolio-item group Canva" data-category="Canva">
                 <div class="relative overflow-hidden rounded-lg">
-                    <img src="https://placehold.co/600x400/d97706/ffffff" alt="Portfolio 2" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img 
+                      src="https://placehold.co/600x400/d97706/ffffff" 
+                      alt="Portfolio 2" 
+                      class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
                             <h4 class="text-white text-xl font-bold mb-2">Modern Art</h4>
@@ -334,7 +358,13 @@
             <!-- Portfolio Item 3 -->
             <div class="portfolio-item group Figma" data-category="Figma">
                 <div class="relative overflow-hidden rounded-lg">
-                    <img src="https://placehold.co/600x400/059669/ffffff" alt="Portfolio 3" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img 
+                      src="https://placehold.co/600x400/059669/ffffff" 
+                      alt="Portfolio 3" 
+                      class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
                             <h4 class="text-white text-xl font-bold mb-2">Nature Sound</h4>
@@ -517,9 +547,13 @@
         <!-- Blog Card 1 -->
         <div class="group">
           <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3" 
-                 alt="Web Development" 
-                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"/>
+            <img 
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3" 
+              alt="Web Development" 
+              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+              decoding="async"
+            />
             <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
               <div class="text-2xl font-bold">23</div>
               <div class="text-sm">Dec</div>
@@ -705,6 +739,19 @@
   </a>
 
   <script>
+    // Debounce function to limit how often a function can fire
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
     // Mobile menu functionality
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -717,7 +764,7 @@
     const sections = ['home', 'about', 'portfolio', 'services', 'blog'];
     const scrollButton = document.querySelector('.scroll-down-btn');
 
-    // Smooth scroll functionality
+    // Optimized smooth scroll functionality
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -725,9 +772,13 @@
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          const headerOffset = 60;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
           });
           
           // Close mobile menu if open
@@ -737,6 +788,11 @@
         }
       });
     });
+
+    // Debounced scroll event handler
+    const debouncedUpdateScrollButton = debounce(updateScrollButton, 100);
+    const debouncedUpdateNavigation = debounce(updateNavigation, 100);
+    const debouncedUpdateBackToTop = debounce(updateBackToTop, 100);
 
     // Dynamic Scroll Button Logic
     function updateScrollButton() {
@@ -750,14 +806,11 @@
         }
       });
       
-      // Set next section as target (or first section if we're at the last one)
       const nextSectionIndex = (currentSectionIndex + 1) % sections.length;
       const nextSection = sections[nextSectionIndex];
       
-      // Update button href and icon if we're at the last section
       scrollButton.href = `#${nextSection}`;
       
-      // Change icon if we're at the last section
       const icon = scrollButton.querySelector('i');
       if (currentSectionIndex === sections.length - 1) {
         icon.classList.remove('fa-circle-down');
@@ -769,67 +822,8 @@
       }
     }
 
-    // Update scroll button on scroll
-    window.addEventListener('scroll', updateScrollButton);
-    
-    // Initial update
-    updateScrollButton();
-
-    // Counter Animation
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-
-    function runCounter() {
-      counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        let count = 0;
-        const inc = target / speed;
-
-        function updateCount() {
-          if (count < target) {
-            count = Math.ceil(count + inc);
-            counter.innerText = count.toLocaleString();
-            setTimeout(updateCount, 1);
-          } else {
-            counter.innerText = target.toLocaleString();
-          }
-        }
-
-        updateCount();
-      });
-    }
-
-    // Intersection Observer for counter animation
-    const observerOptions = {
-      threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          runCounter();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.counter').forEach(counter => {
-      observer.observe(counter.parentElement);
-    });
-
-    // Back to Top Button
-    const backToTopButton = document.querySelector('.back-to-top');
-    
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('visible');
-      } else {
-        backToTopButton.classList.remove('visible');
-      }
-    });
-
     // Update navigation active state
-    window.addEventListener('scroll', () => {
+    function updateNavigation() {
       let current = '';
       sections.forEach(section => {
         const sectionElement = document.getElementById(section);
@@ -848,9 +842,79 @@
           link.classList.add('text-primary-500');
         }
       });
+    }
+
+    // Back to Top Button
+    function updateBackToTop() {
+      const backToTopButton = document.querySelector('.back-to-top');
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    }
+
+    // Add scroll event listeners with debounce
+    window.addEventListener('scroll', () => {
+      debouncedUpdateScrollButton();
+      debouncedUpdateNavigation();
+      debouncedUpdateBackToTop();
+    });
+    
+    // Initial updates
+    updateScrollButton();
+    updateNavigation();
+    updateBackToTop();
+
+    // Optimized Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+    let counterAnimationRunning = false;
+
+    function runCounter() {
+      if (counterAnimationRunning) return;
+      counterAnimationRunning = true;
+
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const inc = target / speed;
+
+        function updateCount() {
+          if (count < target) {
+            count = Math.ceil(count + inc);
+            counter.innerText = count.toLocaleString();
+            requestAnimationFrame(updateCount);
+          } else {
+            counter.innerText = target.toLocaleString();
+            counterAnimationRunning = false;
+          }
+        }
+
+        requestAnimationFrame(updateCount);
+      });
+    }
+
+    // Intersection Observer for counter animation
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          runCounter();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.counter').forEach(counter => {
+      observer.observe(counter.parentElement);
     });
 
-    // Portfolio Filter Functionality
+    // Optimized Portfolio Filter Functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -865,13 +929,14 @@
             portfolioItems.forEach(item => {
                 if (filter === 'all' || item.classList.contains(filter)) {
                     item.style.display = 'block';
-                    // Add fade in animation
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 100);
+                    requestAnimationFrame(() => {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        requestAnimationFrame(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        });
+                    });
                 } else {
                     item.style.display = 'none';
                 }
@@ -884,25 +949,34 @@
         item.style.transition = 'all 0.4s ease-in-out';
     });
 
-    // Progress Bar Animation
+    // Optimized Progress Bar Animation
     function animateProgressBars() {
         const progressBars = document.querySelectorAll('.progress-bar');
+        let animationRunning = false;
+
+        if (animationRunning) return;
+        animationRunning = true;
         
         progressBars.forEach(bar => {
             const target = bar.getAttribute('data-progress');
             let width = 0;
-            const duration = 1500; // Animation duration in milliseconds
-            const interval = 10; // Update interval in milliseconds
-            const increment = (target * interval) / duration;
+            const duration = 1500;
+            const startTime = performance.now();
 
-            const animation = setInterval(() => {
-                if (width >= target) {
-                    clearInterval(animation);
+            function animate(currentTime) {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                width = progress * target;
+                bar.style.width = `${width}%`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
                 } else {
-                    width += increment;
-                    bar.style.width = `${Math.min(width, target)}%`;
+                    animationRunning = false;
                 }
-            }, interval);
+            }
+
+            requestAnimationFrame(animate);
         });
     }
 
@@ -914,7 +988,10 @@
                 skillsObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
+    }, { 
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+    });
 
     // Observe the skills section
     const skillsSection = document.querySelector('.skill-item');
