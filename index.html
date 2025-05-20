@@ -12,24 +12,26 @@
   <link rel="preconnect" href="https://images.unsplash.com">
   <!-- Add preload for critical images -->
   <link rel="preload" as="image" href="https://www.pinterest.com/pin/3799980929976627/" fetchpriority="high">
+  <!-- Add EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: {
-            400: '#FF6B6B',
-            500: '#FF5252',
-            600: '#FF3838'
-          },
-          accent: {
-            400: '#4FD1C5',
-            500: '#38B2AC'
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              400: '#FF6B6B',
+              500: '#FF5252',
+              600: '#FF3838'
+            },
+            accent: {
+              400: '#4FD1C5',
+              500: '#38B2AC'
+            }
           }
         }
       }
     }
-  }
   </script>
   <style type="text/css">
     .mobile-menu {
@@ -672,29 +674,29 @@
 
         <!-- Contact Form -->
         <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/30">
-          <form class="space-y-6">
+          <form id="contact-form" class="space-y-6" onsubmit="return sendEmail(event)">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <input type="text" placeholder="Your Name" 
+                <input type="text" name="name" placeholder="Your Name" required
                        class="w-full bg-gray-900/50 border border-gray-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors"/>
               </div>
               <div>
-                <input type="email" placeholder="Your Email"
+                <input type="email" name="email" placeholder="Your Email" required
                        class="w-full bg-gray-900/50 border border-gray-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors"/>
               </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <input type="tel" placeholder="Your Phone" 
+                <input type="tel" name="phone" placeholder="Your Phone" required
                        class="w-full bg-gray-900/50 border border-gray-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors"/>
               </div>
               <div>
-                <input type="text" placeholder="Subject" 
+                <input type="text" name="subject" placeholder="Subject" required
                        class="w-full bg-gray-900/50 border border-gray-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors"/>
               </div>
             </div>
             <div>
-              <textarea rows="6" placeholder="Write your message here" 
+              <textarea name="message" rows="6" placeholder="Write your message here" required
                         class="w-full bg-gray-900/50 border border-gray-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors"></textarea>
             </div>
             <div>
@@ -993,6 +995,43 @@
     const skillsSection = document.querySelector('.skill-item');
     if (skillsSection) {
         skillsObserver.observe(skillsSection);
+    }
+
+    // Email sending functionality
+    function sendEmail(e) {
+      e.preventDefault();
+      
+      const form = document.getElementById('contact-form');
+      const submitButton = form.querySelector('button[type="submit"]');
+      
+      // Disable submit button and show loading state
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      
+      const templateParams = {
+        to_email: 'soloyne@gmail.com',
+        from_name: form.name.value,
+        from_email: form.email.value,
+        subject: form.subject.value,
+        message: form.message.value + '\n\nContact: ' + form.phone.value
+      };
+
+      emailjs.send('service_djxv3b9', 'template_0hde1g1', templateParams)
+        .then(function(response) {
+          // Show success message
+          alert('Message sent successfully!');
+          form.reset();
+        }, function(error) {
+          // Show error message
+          alert('Failed to send message. Please try again.');
+        })
+        .finally(function() {
+          // Re-enable submit button and restore original text
+          submitButton.disabled = false;
+          submitButton.innerHTML = 'Send Message';
+        });
+
+      return false;
     }
   </script>
 </body>
