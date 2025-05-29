@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Tayebwa Simon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#FF6B6B',
+                            500: '#FF5252',
+                            600: '#FF3838'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blog-article {
+            display: none;
+        }
+        .blog-article.active {
+            display: block;
+        }
+        .benefit-card {
+            background-color: rgba(255, 82, 82, 0.1);
+            border: 1px solid rgba(255, 82, 82, 0.2);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 82, 82, 0.15);
+        }
+        .article-header {
+            background-color: rgba(82, 82, 82, 0.3);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .social-icons {
+            background-color: rgba(255, 82, 82, 0.1);
+            border-radius: 2rem;
+            padding: 0.5rem 1rem;
+            display: inline-flex;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-800 via-gray-700 to-green-900 min-h-screen text-white">
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-4 md:px-10 py-6 relative">
+        <div class="flex items-center space-x-2">
+            <span class="text-3xl text-primary-500"><i class="fa-solid fa-crown"></i></span>
+            <span class="text-2xl font-bold">ke<span class="text-primary-500">ed</span></span>
+        </div>
+        <a href="index.html" class="text-primary-500 hover:text-primary-400 transition-colors">
+            <i class="fas fa-arrow-left mr-2"></i>Back to Home
+        </a>
+    </nav>
+
+    <!-- Blog Content -->
+    <main class="container mx-auto px-4 py-12 space-y-24">
+        <!-- Web Development Section -->
+        <article id="web-development" class="blog-article max-w-5xl mx-auto">
+            <div class="article-header text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary-500 mb-4">Micro-interactions in Websites</h1>
+                <p class="text-gray-400 mb-6">Enhancing User Experience Through Small Details</p>
+                <div class="social-icons">
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div>
+                    <img src="images/Web design.jpg" alt="Web Development" class="w-full rounded-xl shadow-xl">
+                </div>
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="benefit-card">
+                            <h3 class="text-xl font-bold text-primary-500 mb-2">Enhanced Engagement</h3>
+                            <p class="text-gray-300">Micro-interactions keep users engaged and provide immediate feedback, making the experience more intuitive and enjoyable.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3 class="text-xl font-bold text-primary-500 mb-2">Better Usability</h3>
+                            <p class="text-gray-300">Small animations and transitions help users understand how to interact with your interface more effectively.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3 class="text-xl font-bold text-primary-500 mb-2">Increased Retention</h3>
+                            <p class="text-gray-300">Thoughtful micro-interactions create memorable experiences that keep users coming back to your website.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose prose-lg prose-invert max-w-none">
+                <h2 class="text-3xl font-bold text-primary-500 mb-6">Understanding Microinteractions in Web Design</h2>
+                
+                <p class="text-gray-300 text-lg mb-8">
+                    Microinteractions are the unsung heroes of user experience (UX) design. They are those tiny, often overlooked, moments in an interface that provide immediate feedback, guide users, and ultimately make digital products feel more intuitive, human, and delightful. While seemingly small, their impact on user satisfaction and engagement is immense.
+                </p>
+
+                <h3 class="text-2xl font-bold text-primary-500 mb-4">The Magic in the Details</h3>
+                <p class="text-gray-300 text-lg mb-6">
+                    In the vast landscape of web design, it's often the grand gestures that capture attention – stunning visuals, seamless navigation, and powerful features. Yet, the true masters of user experience understand that profound impact often lies in the most subtle of details: microinteractions.
+                </p>
+
+                <h3 class="text-2xl font-bold text-primary-500 mb-4">What Exactly Are Microinteractions?</h3>
+                <p class="text-gray-300 text-lg mb-6">
+                    Coined by UX expert Dan Saffer, a microinteraction is a "contained product moment that revolves around a single use case or task – a tiny piece of functionality that only does one thing." Think of them as the digital equivalent of a friendly wink or a subtle nod.
+                </p>
+
+                <div class="bg-gray-800/50 rounded-lg p-6 mb-8">
+                    <h4 class="text-xl font-bold text-primary-500 mb-4">They answer questions like:</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>"Did my click register?"</li>
+                        <li>"Is my data being sent?"</li>
+                        <li>"What do I do next?"</li>
+                        <li>"Has this action been successful?"</li>
+                    </ul>
+                </div>
+
+                <h3 class="text-2xl font-bold text-primary-500 mb-4">The Four Core Elements</h3>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="benefit-card">
+                        <h4 class="text-xl font-bold text-primary-500 mb-2">1. Trigger</h4>
+                        <p class="text-gray-300">What initiates the microinteraction - user actions or system events.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4 class="text-xl font-bold text-primary-500 mb-2">2. Rules</h4>
+                        <p class="text-gray-300">Define what happens once the trigger occurs.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4 class="text-xl font-bold text-primary-500 mb-2">3. Feedback</h4>
+                        <p class="text-gray-300">The visible or audible response informing the user.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4 class="text-xl font-bold text-primary-500 mb-2">4. Loops & Modes</h4>
+                        <p class="text-gray-300">How the interaction changes over time or in different contexts.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-primary-500 mb-4">Common Examples of Effective Microinteractions</h3>
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div class="p-4 bg-gray-800/30 rounded-lg">
+                        <h5 class="text-lg font-bold text-primary-500 mb-2">Social Interactions</h5>
+                        <p class="text-gray-300">Like buttons, heart animations, thumb reactions</p>
+                    </div>
+                    <div class="p-4 bg-gray-800/30 rounded-lg">
+                        <h5 class="text-lg font-bold text-primary-500 mb-2">Form Feedback</h5>
+                        <p class="text-gray-300">Validation indicators, password strength meters</p>
+                    </div>
+                    <div class="p-4 bg-gray-800/30 rounded-lg">
+                        <h5 class="text-lg font-bold text-primary-500 mb-2">System Status</h5>
+                        <p class="text-gray-300">Loading spinners, progress bars, typing indicators</p>
+                    </div>
+                </div>
+
+                <div class="bg-primary-500/10 border border-primary-500/20 rounded-lg p-6 mb-8">
+                    <h3 class="text-2xl font-bold text-primary-500 mb-4">Best Practices</h3>
+                    <ul class="list-none space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-primary-500 mr-2">✓</span>
+                            <p class="text-gray-300">Keep it simple and subtle - don't overcomplicate the interaction</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary-500 mr-2">✓</span>
+                            <p class="text-gray-300">Provide immediate feedback to user actions</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary-500 mr-2">✓</span>
+                            <p class="text-gray-300">Maintain consistency across your website</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary-500 mr-2">✓</span>
+                            <p class="text-gray-300">Ensure accessibility for all users</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="prose prose-lg prose-invert max-w-none">
+                    <p class="text-gray-300 text-lg italic border-l-4 border-primary-500 pl-4 mb-8">
+                        Start looking for these little design gems on your favorite websites and apps, and then consider how you can strategically implement them to elevate your own digital creations. The magic, after all, is often in the details.
+                    </p>
+
+                    <div class="mt-12 pt-8 border-t border-gray-700">
+                        <h4 class="text-xl font-semibold text-primary-500 mb-2">Source</h4>
+                        <a href="https://www.aufaitux.com/blog/micro-interactions/" 
+                           class="text-gray-400 hover:text-primary-500 transition-colors" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            AufaitUX - Microinteractions: Designing with Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Branding Section -->
+        <article id="branding" class="blog-article max-w-5xl mx-auto">
+            <div class="article-header text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary-500 mb-4">The Language of Design and Branding</h1>
+                <p class="text-gray-400 mb-6">Creating Memorable Brand Experiences</p>
+                <div class="social-icons">
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div>
+                    <img src="images/Branding.jpg" alt="Branding" class="w-full rounded-xl shadow-xl">
+                </div>
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="benefit-card">
+                            <h3 class="text-xl font-bold text-primary-500 mb-2">Brand Recognition</h3>
+                            <p class="text-gray-300">Strong branding creates instant recognition and builds trust with your target audience.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3 class="text-xl font-bold text-primary-500 mb-2">Emotional Connection</h3>
+                            <p class="text-gray-300">Effective branding establishes emotional bonds with customers through meaningful design elements.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3 class="text-xl font-bold text-primary-500 mb-2">Market Differentiation</h3>
+                            <p class="text-gray-300">Unique branding helps your business stand out in a crowded marketplace.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose prose-lg prose-invert max-w-none">
+                <p class="text-gray-300 text-lg mb-6">
+                    Content for the branding article will be added here...
+                </p>
+            </div>
+        </article>
+
+        <!-- Social Media Section -->
+        <article id="social-media" class="blog-article max-w-5xl mx-auto">
+            <div class="article-header text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary-500 mb-4">How to Design for Social Media</h1>
+                <p class="text-gray-400 mb-6">Mastering Visual Communication in the Digital Age</p>
+                <div class="social-icons">
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-primary-500 hover:text-primary-400"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div>
+                    <img src="images/Social media.jpg" alt="Social Media" class="w-full rounded-xl shadow-xl">
+                </div>
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="benefit-card">
+                            <h3 class="text-xl font-bold text-primary-500 mb-2">Visual Impact</h3>
+                            <p class="text-gray-300">Create eye-catching content that stops users from scrolling and drives engagement.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3 class="text-xl font-bold text-primary-500 mb-2">Platform Optimization</h3>
+                            <p class="text-gray-300">Tailor your designs to each platform's unique requirements and audience expectations.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3 class="text-xl font-bold text-primary-500 mb-2">Brand Consistency</h3>
+                            <p class="text-gray-300">Maintain cohesive visual identity across all social media platforms while adapting to each platform's style.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose prose-lg prose-invert max-w-none">
+                <p class="text-gray-300 text-lg mb-6">
+                    Content for the social media article will be added here...
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 mt-20 py-8">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2025 keedcodesofcourse. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Function to show the correct article based on hash
+        function showArticle() {
+            // Hide all articles
+            document.querySelectorAll('.blog-article').forEach(article => {
+                article.classList.remove('active');
+            });
+
+            // Get the hash from URL (remove the #)
+            const hash = window.location.hash.slice(1);
+
+            // If there's a hash, show the corresponding article
+            if (hash) {
+                const article = document.getElementById(hash);
+                if (article) {
+                    article.classList.add('active');
+                }
+            } else {
+                // If no hash, show the first article
+                const firstArticle = document.querySelector('.blog-article');
+                if (firstArticle) {
+                    firstArticle.classList.add('active');
+                }
+            }
+        }
+
+        // Show correct article on page load
+        showArticle();
+
+        // Show correct article when hash changes
+        window.addEventListener('hashchange', showArticle);
+    </script>
+</body>
+</html>
