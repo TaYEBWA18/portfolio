@@ -1018,7 +1018,7 @@
         from_name: form.name.value,
         from_email: form.email.value,
         subject: form.subject.value,
-        message: form.message.value + '\n\nContact: ' + form.phone.value
+        message: form.message.value + '\n\nName: ' + form.name.value + '\n\nContact: ' + form.phone.value + '\n\nEmail: ' + form.email.value
       };
 
       emailjs.send('service_djxv3b9', 'template_0hde1g1', templateParams)
