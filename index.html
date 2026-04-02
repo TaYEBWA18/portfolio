@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tayebwa Simon</title>
+  <title>Tayebwa Simon | Full-Stack Web Developer</title>
+  <meta name="description" content="Simon Tayebwa — Full-Stack Web Developer based in Kampala, Uganda. Specialising in Laravel, PHP, MySQL, and JavaScript web applications and systems.">
+  <meta name="author" content="Tayebwa Simon">
+  <meta property="og:title" content="Tayebwa Simon | Full-Stack Web Developer">
+  <meta property="og:description" content="Full-Stack Web Developer based in Kampala, Uganda. Laravel, PHP, MySQL, and JavaScript.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/cline.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tayebwa Simon | Full-Stack Web Developer">
+  <meta name="twitter:description" content="Full-Stack Web Developer based in Kampala, Uganda.">
+  <meta name="twitter:image" content="images/cline.webp">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <!-- Add preconnect for external resources -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://images.unsplash.com">
-  <!-- Add preload for critical images -->
-  <link rel="preload" as="image" href="https://www.pinterest.com/pin/3799980929976627/" fetchpriority="high">
-  <!-- Add EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("pkNqvOWxm2bxm3Z1g"); // EmailJS user ID or public key
-    })();
-  </script>
   <script>
     tailwind.config = {
       theme: {
@@ -190,7 +191,7 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-gray-800 via-gray-700 to-green-900 min-h-screen text-white">
+<body class="min-h-screen text-white" style="background-color: #363e50;">
   <!-- Navbar -->
   <nav class="flex items-center justify-between px-4 md:px-10 py-6 relative">
     <div class="flex items-center space-x-2">
@@ -209,7 +210,6 @@
       <li><a href="#services" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Services</a></li>
       <li><a href="#about" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">About</a></li>
       <li><a href="#portfolio" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Portfolio</a></li>
-      <li><a href="#blog" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Blog</a></li>
       <li><a href="#contact" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Contact</a></li>
     </ul>
 
@@ -223,16 +223,16 @@
         <li><a href="#blog" class="block hover:text-primary-400 transition-colors duration-300">Blog</a></li>
         <li><a href="#contact" class="block hover:text-primary-400 transition-colors duration-300">Contact</a></li>
         <li>
-          <a href="assets/cv.pdf" download target="_blank" class="block border-2 border-primary-500 text-primary-500 px-6 py-2 rounded-[20px] font-semibold text-center transition-all duration-300 hover:bg-primary-500 hover:text-white hover:scale-105">
-            <i class="fas fa-download mr-2"></i>Download CV
+          <a href="https://flowcv.com/resume/u61bjeujhwa4" class="block border-2 border-primary-500 text-primary-500 px-6 py-2 rounded-[20px] font-semibold text-center transition-all duration-300 hover:bg-primary-500 hover:text-white hover:scale-105">
+            <i class="fas fa-file-alt mr-2"></i>View CV
           </a>
         </li>
       </ul>
     </div>
 
-    <!-- Desktop Download CV Button -->
-    <a href="assets/cv.pdf" download target="_blank" class="hidden md:inline-block border-2 border-primary-500 text-primary-500 px-6 py-2 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-500 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">
-      <i class="fas fa-download mr-2"></i>Download CV
+    <!-- Desktop View CV Button -->
+    <a href="https://flowcv.com/resume/u61bjeujhwa4" class="hidden md:inline-block border-2 border-primary-500 text-primary-500 px-6 py-2 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-500 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">
+      <i class="fas fa-file-alt mr-2"></i>View CV
     </a>
   </nav>
 
@@ -243,10 +243,10 @@
       <h2 class="text-2xl text-primary-500 font-semibold mb-2">Hello, I'm</h2>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Simon Tayebwa</h1>
       <p class="text-xl mb-2">
-        A <span class="text-accent-400">Creative Designer</span> From <span class="text-primary-400">Kampala</span>
+        A <span class="text-accent-400">Full-Stack Developer</span> From <span class="text-primary-400">Kampala</span>
       </p>
       <p class="text-gray-200 mb-8 max-w-lg">
-        I'm a passionate and dedicated creative designer from Kampala, bringing ideas to life with heart and skill.
+        I'm a passionate full-stack web developer from Kampala, building robust websites and web-based systems — with Laravel as my weapon of choice.
       </p>
       <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
         <a href="#about" class="btn-primary inline-block bg-primary-500 text-white px-8 py-3 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-600 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">About Me</a>
@@ -264,19 +264,22 @@
       <div class="absolute w-64 md:w-72 h-64 md:h-72 bg-white opacity-10 rounded-full -z-10"></div>
       <!-- Main Image -->
       <div class="relative">
-        <img src="images/cline.jfif" alt="keed" class="w-72 md:w-80 lg:w-96 h-72 md:h-80 lg:h-96 object-cover rounded-2xl shadow-lg border-4 border-gray-700/50 backdrop-blur-sm"
-          loading="eager"
-          fetchpriority="high"
-        />
-        <!-- Skill Badges -->
-        <span class="absolute top-4 left-0 bg-white/90 backdrop-blur-sm text-accent-400 font-bold px-3 py-2 rounded-lg shadow-lg">
-          <img src="images/photoshop.png" alt="Photoshop" class="w-8 h-8 object-contain"/>
+        <picture>
+          <source srcset="images/edited_photo_no_shadow.webp" type="image/webp">
+          <img src="images/edited_photo_no_shadow.jpg" alt="keed" class="w-72 md:w-80 lg:w-96 h-96 md:h-[26rem] lg:h-[30rem] object-cover object-top"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </picture>
+        <!-- Tech Stack Badges -->
+        <span class="absolute top-4 left-0 bg-[#363e50]/90 backdrop-blur-sm text-red-400 font-bold px-3 py-2 rounded-lg shadow-lg flex items-center gap-2">
+          <i class="fab fa-laravel text-xl"></i><span class="text-white text-sm">Laravel</span>
         </span>
-        <span class="absolute top-10 right-0 bg-white/90 backdrop-blur-sm text-primary-400 font-bold px-3 py-2 rounded-lg shadow-lg">
-          <img src="images/illustrator.png" alt="Canva" class="w-8 h-8 object-contain"/>
+        <span class="absolute top-10 right-0 bg-[#363e50]/90 backdrop-blur-sm text-indigo-400 font-bold px-3 py-2 rounded-lg shadow-lg flex items-center gap-2">
+          <i class="fab fa-php text-xl"></i><span class="text-white text-sm">PHP</span>
         </span>
-        <span class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" class="w-8 h-8 object-contain"/>
+        <span class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#363e50]/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg flex items-center gap-2">
+          <i class="fab fa-js-square text-yellow-400 text-xl"></i><span class="text-white text-sm">JavaScript</span>
         </span>
       </div>
     </div>
@@ -289,32 +292,34 @@
         <!-- Left Side - Image -->
         <div class="lg:w-1/2 relative">
           <div class="relative">
-            <img src="images/team.jpg" 
-                 alt="Designer at work" 
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&h=700&fit=crop&q=80&auto=format"
+                 alt="Developer coding at laptop"
                  class="rounded-2xl w-full h-auto shadow-xl"
+                 loading="lazy" decoding="async"
             />
             <!-- Stats Overlay -->
             <div class="absolute -top-8 left-8 bg-gray-900/90 backdrop-blur-sm text-primary-400 p-4 rounded-lg shadow-lg border border-primary-500/20">
               <span class="text-4xl font-bold counter" data-target="5">0</span>
-              <p class="text-sm text-gray-400">Years of Design</p>
+              <p class="text-sm text-gray-400">Years of Experience</p>
             </div>
             <div class="absolute -bottom-8 right-8 bg-gray-900 text-primary-400 p-4 rounded-lg shadow-lg">
-              <span class="text-4xl font-bold counter" data-target="900">0</span>
-              <p class="text-sm text-gray-400">Designs</p>
+              <span class="text-4xl font-bold counter" data-target="50">0</span>
+              <p class="text-sm text-gray-400">Projects Delivered</p>
             </div>
           </div>
         </div>
         
         <!-- Right Side - Content -->
         <div class="lg:w-1/2">
-          <h3 class="text-primary-500 text-xl mb-4">I'm a Designer</h3>
-          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">I Can Design Anything You Want</h2>
+          <h3 class="text-primary-500 text-xl mb-4">I'm a Developer</h3>
+          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">I Build Full-Stack Web Solutions</h2>
           <p class="text-gray-400 mb-8">
-            With five years of dedicated experience as a web designer and developer, 
-            I bring a blend of passion and precision to every project.
-             I thrive on transforming concepts into engaging digital realities, 
-             meticulously guiding each step from collaborative discussion to the final launch. 
-             Let's build something remarkable together.
+            With five years of hands-on experience in full-stack web development,
+            I specialise in building fast, scalable, and maintainable web applications.
+            My stack is centred around Laravel and PHP on the backend, paired with
+            modern JavaScript on the frontend. From database architecture to deployment,
+            I own the full process — and I enjoy every step of it.
+            Let's build something remarkable together.
           </p>
           <a href="#contact" class="btn-primary inline-block bg-primary-500 text-white px-8 py-3 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-600 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">Hire Me</a>
         </div>
@@ -328,67 +333,68 @@
         <!-- Section Header -->
         <div class="text-center mb-12">
             <h3 class="text-primary-500 text-xl mb-4">Portfolio</h3>
-            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">My Amazing Works</h2>
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">My Recent Projects</h2>
             <p class="text-gray-400 max-w-2xl mx-auto">
-              Explore a selection of my recent projects and see how I bring digital visions to life.
+              A selection of web applications and systems I've built — from full-stack platforms to custom APIs.
             </p>
         </div>
 
         <!-- Portfolio Filter -->
         <div class="flex flex-wrap justify-center gap-6 mb-12">
             <button class="filter-btn active text-white hover:text-primary-500 transition-colors duration-300" data-filter="all">All</button>
-            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="youtube">Youtube</button>
-            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="Figma">Figma</button>
-            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="Github">Github</button>
-            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="Canva">Canva</button>
-            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="detail">Detail</button>
+            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="laravel">Laravel</button>
+            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="fullstack">Full Stack</button>
+            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="api">API</button>
         </div>
 
         <!-- Portfolio Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             <!-- Portfolio Item 1 -->
-            <div class="portfolio-item group youtube" data-category="youtube">
+            <div class="portfolio-item group laravel" data-category="laravel">
                 <div class="relative overflow-hidden rounded-lg">
-                    <img src="images/creative_hand-collage.jpg" alt="Portfolio 1" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
-                        loading="lazy"
-                        decoding="async"
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80&auto=format"
+                         alt="Laravel web application code"
+                         class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                         loading="lazy" decoding="async"
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
-                            <h4 class="text-white text-xl font-bold mb-2">Creative Design</h4>
-                            <p class="text-gray-300">Youtube Project</p>
+                            <h4 class="text-white text-xl font-bold mb-2">Web Application</h4>
+                            <p class="text-gray-300">Laravel Project</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Portfolio Item 2 -->
-            <div class="portfolio-item group Canva" data-category="Canva">
+            <div class="portfolio-item group fullstack" data-category="fullstack">
                 <div class="relative overflow-hidden rounded-lg">
-                    <img src="images/illustration-digital-art-style-with-pottery.jpg" alt="Portfolio 2" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
-                        loading="lazy"
-                        decoding="async"
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80&auto=format"
+                         alt="Management system dashboard"
+                         class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                         loading="lazy" decoding="async"
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
-                            <h4 class="text-white text-xl font-bold mb-2">Modern Art</h4>
-                            <p class="text-gray-300">Canva Projects</p>
+                            <h4 class="text-white text-xl font-bold mb-2">Management System</h4>
+                            <p class="text-gray-300">Full Stack Project</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Portfolio Item 3 -->
-            <div class="portfolio-item group Figma" data-category="Figma">
+            <div class="portfolio-item group api" data-category="api">
                 <div class="relative overflow-hidden rounded-lg">
-                    <img src="images/4510360.jpg" alt="Portfolio 3" class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
-                        loading="lazy"
-                        decoding="async"
+                    <img src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=800&h=400&fit=crop&q=80&auto=format"
+                         alt="REST API development"
+                         class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                         loading="lazy" decoding="async"
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
-                            <h4 class="text-white text-xl font-bold mb-2">Pearl Rides</h4>
-                            <p class="text-gray-300">Figma Project</p>
+                            <h4 class="text-white text-xl font-bold mb-2">REST API</h4>
+                            <p class="text-gray-300">API Project</p>
                         </div>
                     </div>
                 </div>
@@ -399,58 +405,70 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <!-- Left Side: Content -->
             <div class="flex flex-col justify-center">
-                <h3 class="text-primary-500 text-xl mb-4">Design is Life</h3>
-                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">I develop skills regularly to keep up-to-date with the current trends and provide fitting solutions to my clients' needs.</h2>
+                <h3 class="text-primary-500 text-xl mb-4">Code is Life</h3>
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">I keep my skills sharp to deliver modern, production-ready solutions my clients can rely on.</h2>
                 <p class="text-gray-400 mb-8">
-                    "If you stay in the kitchen long enough, you'll definately eat !"
+                    "If you stay in the kitchen long enough, you'll definitely eat!"
                 </p>
             </div>
 
             <!-- Right Side: Skills -->
             <div class="space-y-8">
 
-              <!-- canva Skill -->
+              <!-- Laravel Skill -->
               <div class="skill-item">
                 <div class="flex justify-between mb-2">
-                    <span class="text-white">canva</span>
+                    <span class="text-white">Laravel</span>
                     <span class="text-orange-500">90%</span>
                 </div>
                 <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
                     <div class="progress-bar bg-orange-500 h-full rounded-full" data-progress="90" style="width: 0%"></div>
                 </div>
-            </div>
-                <!-- Illustrator Skill -->
-                <div class="skill-item">
-                    <div class="flex justify-between mb-2">
-                        <span class="text-white">illustrator</span>
-                        <span class="text-primary-500">85%</span>
-                    </div>
-                    <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                        <div class="progress-bar bg-primary-500 h-full rounded-full" data-progress="85" style="width: 0%"></div>
-                    </div>
-                </div>
+              </div>
 
-                <!-- Photoshop Skill -->
-                <div class="skill-item">
-                    <div class="flex justify-between mb-2">
-                        <span class="text-white">photoshop</span>
-                        <span class="text-green-500">80%</span>
-                    </div>
-                    <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                        <div class="progress-bar bg-green-500 h-full rounded-full" data-progress="80" style="width: 0%"></div>
-                    </div>
+              <!-- PHP Skill -->
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                    <span class="text-white">PHP</span>
+                    <span class="text-primary-500">88%</span>
                 </div>
+                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                    <div class="progress-bar bg-primary-500 h-full rounded-full" data-progress="88" style="width: 0%"></div>
+                </div>
+              </div>
 
-                <!-- Figma Skill -->
-                <div class="skill-item">
-                    <div class="flex justify-between mb-2">
-                        <span class="text-white">figma</span>
-                        <span class="text-purple-500">75%</span>
-                    </div>
-                    <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                        <div class="progress-bar bg-purple-500 h-full rounded-full" data-progress="75" style="width: 0%"></div>
-                    </div>
+              <!-- MySQL Skill -->
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                    <span class="text-white">MySQL</span>
+                    <span class="text-green-500">85%</span>
                 </div>
+                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                    <div class="progress-bar bg-green-500 h-full rounded-full" data-progress="85" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <!-- JavaScript Skill -->
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                    <span class="text-white">JavaScript</span>
+                    <span class="text-yellow-500">80%</span>
+                </div>
+                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                    <div class="progress-bar bg-yellow-500 h-full rounded-full" data-progress="80" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <!-- HTML & CSS Skill -->
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                    <span class="text-white">HTML &amp; CSS</span>
+                    <span class="text-purple-500">90%</span>
+                </div>
+                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                    <div class="progress-bar bg-purple-500 h-full rounded-full" data-progress="90" style="width: 0%"></div>
+                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -465,84 +483,71 @@
     <div class="container mx-auto relative">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">What I Do for Clients</h2>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">What I Build for Clients</h2>
         <p class="text-gray-400 max-w-2xl mx-auto">
-          I create captivating and functional digital experiences that elevate brands, engage audiences, 
-          and bring ideas to life through thoughtful design and innovation.
+          From backend systems to polished frontends, I deliver complete, production-ready web solutions
+          tailored to real business needs.
         </p>
       </div>
 
       <!-- Services Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Creative Design Service -->
+        <!-- Full-Stack Development Service -->
         <div class="neomorphic bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 group transition-all duration-300">
           <div class="flex items-start gap-6">
             <div class="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0">
               <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
               </svg>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-white mb-4">Creative Design</h3>
-              <p class="text-gray-400 mb-4">Bringing ideas to life with unique and visually striking designs. Whether it's branding, promotional materials, or innovative concepts, creative design ensures your business stands out and leaves a lasting impression.</p>
-              <div class="text-primary-500 font-semibold">
-                <!-- Starts from <span class="text-2xl">$27.5</span> -->
-              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Full-Stack Development</h3>
+              <p class="text-gray-400 mb-4">End-to-end web application development using Laravel on the backend and modern JavaScript on the frontend. I handle everything from database design to UI, delivering complete, maintainable systems that scale with your business.</p>
             </div>
           </div>
         </div>
 
-        <!-- Graphic Design Service -->
+        <!-- Backend / API Service -->
         <div class="neomorphic bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 group transition-all duration-300">
           <div class="flex items-start gap-6">
             <div class="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0">
               <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
               </svg>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-white mb-4">Graphic Design</h3>
-              <p class="text-gray-400 mb-4">Visual storytelling through high-quality graphics, logos, and branding elements. Strong graphics enhance brand recognition, capture attention, and communicate your message effectively to your audience.</p>
-              <div class="text-primary-500 font-semibold">
-                <!-- Starts from <span class="text-2xl">$9.50</span> -->
-              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Backend &amp; API Development</h3>
+              <p class="text-gray-400 mb-4">Robust, secure REST APIs and backend systems built with Laravel and PHP. Whether integrating third-party services, building admin panels, or architecting multi-tenant systems, I write clean code that's easy to maintain and extend.</p>
             </div>
           </div>
         </div>
 
-        <!-- UI/UX Design Service -->
+        <!-- Web-Based Systems Service -->
         <div class="neomorphic bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 group transition-all duration-300">
           <div class="flex items-start gap-6">
             <div class="w-16 h-16 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0">
               <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
               </svg>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-white mb-4">UI/UX Design</h3>
-              <p class="text-gray-400 mb-4">Crafting seamless and intuitive user experiences that keep visitors engaged. A well-designed interface improves usability, enhances customer satisfaction, and drives conversions ensuring your digital presence is both functional and attractive.</p>
-              <div class="text-primary-500 font-semibold">
-                <!-- Starts from <span class="text-2xl">$99.9</span> -->
-              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Web-Based Systems</h3>
+              <p class="text-gray-400 mb-4">Custom business systems — inventory management, school management, booking platforms, and more. I translate complex workflows into intuitive web interfaces backed by solid database architecture and business logic.</p>
             </div>
           </div>
         </div>
 
-        <!-- Web Design Service -->
+        <!-- Database & Optimisation Service -->
         <div class="neomorphic bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 group transition-all duration-300">
           <div class="flex items-start gap-6">
             <div class="w-16 h-16 rounded-full bg-yellow-500/10 flex items-center justify-center flex-shrink-0">
               <svg class="w-8 h-8 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
               </svg>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-white mb-4">Web Design</h3>
-              <p class="text-gray-400 mb-4">Building aesthetically pleasing and highly functional websites tailored to your business needs. A well-designed website strengthens credibility, boosts online visibility, and helps you connect with potential clients effortlessly.
-                </p>      
-                  <div class="text-primary-500 font-semibold">
-                <!-- Starts from <span class="text-2xl">$149</span> -->
-              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Database Design &amp; Optimisation</h3>
+              <p class="text-gray-400 mb-4">Well-structured MySQL schemas, efficient queries, and Eloquent ORM patterns that keep applications fast under load. I design databases that grow with your product rather than become a bottleneck.</p>
             </div>
           </div>
         </div>
@@ -560,7 +565,7 @@
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h3 class="text-primary-500 text-xl mb-4">From My Blog</h3>
-        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Our Recent Updates, Blog, Tips,<br>Tricks & More</h2>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Dev Tips, Tutorials &amp; Thoughts<br>From the Trenches</h2>
       </div>
 
       <!-- Blog Grid -->
@@ -568,9 +573,10 @@
         <!-- Blog Card 1 -->
         <div class="group">
           <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="images/Web design.jpg" alt="Web Development" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
+            <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=256&fit=crop&q=80&auto=format"
+                 alt="Laravel framework code"
+                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                 loading="lazy" decoding="async"
             />
             <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
               <div class="text-2xl font-bold">01</div>
@@ -579,10 +585,10 @@
           </div>
           <div class="space-y-4">
               <div>
-                <a href="blog.html#web-development" class="text-primary-500 font-medium hover:text-primary-400 transition-colors">Web Development</a>
+                <span class="text-primary-500 font-medium">Laravel</span>
               </div>
               <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                <a href="blog.html#web-development">Micro-interactions in websites</a>
+                Why Laravel is My Go-To Framework
               </h3>
             </div>
         </div>
@@ -590,9 +596,10 @@
         <!-- Blog Card 2 -->
         <div class="group">
           <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="images/Branding.jpg" alt="Branding" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
+            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=256&fit=crop&q=80&auto=format"
+                 alt="Project code structure"
+                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                 loading="lazy" decoding="async"
             />
             <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
               <div class="text-2xl font-bold">28</div>
@@ -601,10 +608,10 @@
           </div>
           <div class="space-y-4">
               <div>
-                <a href="blog.html#branding" class="text-primary-500 font-medium hover:text-primary-400 transition-colors">Branding</a>
+                <span class="text-primary-500 font-medium">Backend</span>
               </div>
               <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                <a href="">The language of design and branding</a>
+                Structuring a Laravel Project That Doesn't Fall Apart
               </h3>
             </div>
         </div>
@@ -612,9 +619,10 @@
         <!-- Blog Card 3 -->
         <div class="group">
           <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="images/Social media.jpg" alt="Social Media" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
+            <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=256&fit=crop&q=80&auto=format"
+                 alt="Multi-tenant system architecture"
+                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                 loading="lazy" decoding="async"
             />
             <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
               <div class="text-2xl font-bold">15</div>
@@ -623,10 +631,10 @@
           </div>
           <div class="space-y-4">
               <div>
-                <a href="blog.html#social-media" class="text-primary-500 font-medium hover:text-primary-400 transition-colors">Social Media</a>
+                <span class="text-primary-500 font-medium">Full Stack</span>
               </div>
               <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                <a href="blog.html#social-media">How to design for social media</a>
+                Building a Multi-Tenant System in Laravel
               </h3>
             </div>
         </div>
@@ -634,9 +642,10 @@
         <!-- Blog Card 4 (hidden by default) -->
         <div class="group hidden extra-blog">
           <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="images/typo (2).jpg" alt="Color Theory" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=256&fit=crop&q=80&auto=format"
+                 alt="MySQL database optimisation"
+                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                 loading="lazy" decoding="async"
             />
             <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
               <div class="text-2xl font-bold">10</div>
@@ -645,10 +654,10 @@
           </div>
           <div class="space-y-4">
               <div>
-                <a href="blog.html#color-theory" class="text-primary-500 font-medium hover:text-primary-400 transition-colors">Design Basics</a>
+                <span class="text-primary-500 font-medium">Database</span>
               </div>
               <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                <a href="blog.html#color-theory">Color Theory in Modern Design</a>
+                MySQL Optimisation Tips Every Dev Should Know
               </h3>
             </div>
         </div>
@@ -656,9 +665,10 @@
         <!-- Blog Card 5 (hidden by default) -->
         <div class="group hidden extra-blog">
           <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="images/typo (1).jpg" alt="Typography" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
+            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=256&fit=crop&q=80&auto=format"
+                 alt="JavaScript code"
+                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                 loading="lazy" decoding="async"
             />
             <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
               <div class="text-2xl font-bold">22</div>
@@ -667,10 +677,10 @@
           </div>
           <div class="space-y-4">
               <div>
-                <a href="blog.html#typography" class="text-primary-500 font-medium hover:text-primary-400 transition-colors">Typography</a>
+                <span class="text-primary-500 font-medium">JavaScript</span>
               </div>
               <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                <a href="blog.html#typography">Typography: The Art of Letters</a>
+                Vanilla JS vs Frameworks: When to Choose What
               </h3>
             </div>
         </div>
@@ -678,9 +688,10 @@
         <!-- Blog Card 6 (hidden by default) -->
         <div class="group hidden extra-blog">
           <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="images/gig.jpg" alt="Gig" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=256&fit=crop&q=80&auto=format"
+                 alt="VPS server deployment"
+                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                 loading="lazy" decoding="async"
             />
             <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
               <div class="text-2xl font-bold">05</div>
@@ -689,10 +700,10 @@
           </div>
           <div class="space-y-4">
               <div>
-                <a href="blog.html#accessibility" class="text-primary-500 font-medium hover:text-primary-400 transition-colors">Gig economy</a>
+                <span class="text-primary-500 font-medium">DevOps</span>
               </div>
               <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                <a href="blog.html#accessibility">Can you get it done ASAP?</a>
+                Deploying a Laravel App to a VPS From Scratch
               </h3>
             </div>
         </div>
@@ -716,9 +727,9 @@
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h3 class="text-primary-500 text-xl mb-4">Contact Me</h3>
-        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">What can I design for you today?</h2>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">What can I build for you today?</h2>
         <p class="text-gray-400 max-w-2xl mx-auto">
-           Please fill out the form on this section to get in touch. I'll be glad to do your design.
+          Have a project in mind? Fill out the form and I'll get back to you. Let's build something great.
         </p>
       </div>
 
@@ -1099,38 +1110,40 @@
     }
 
     // Email sending functionality
-    function sendEmail(e) {
+    async function sendEmail(e) {
       e.preventDefault();
-      
+
       const form = document.getElementById('contact-form');
       const submitButton = form.querySelector('button[type="submit"]');
-      
-      // Disable submit button and show loading state
+
       submitButton.disabled = true;
       submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      
-      const templateParams = {
-        to_email: 'soloyne@gmail.com',
-        from_name: form.name.value,
-        from_email: form.email.value,
-        subject: form.subject.value,
-        message: form.message.value + '\n\nName: ' + form.name.value + '\n\nContact: ' + form.phone.value + '\n\nEmail: ' + form.email.value
-      };
 
-      emailjs.send('service_djxv3b9', 'template_0hde1g1', templateParams)
-        .then(function(response) {
-          // Show success message
+      try {
+        const response = await fetch('/.netlify/functions/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: form.name.value,
+            email: form.email.value,
+            phone: form.phone.value,
+            subject: form.subject.value,
+            message: form.message.value,
+          }),
+        });
+
+        if (response.ok) {
           alert('Message sent successfully!');
           form.reset();
-        }, function(error) {
-          // Show error message
+        } else {
           alert('Failed to send message. Please try again.');
-        })
-        .finally(function() {
-          // Re-enable submit button and restore original text
-          submitButton.disabled = false;
-          submitButton.innerHTML = 'Send Message';
-        });
+        }
+      } catch {
+        alert('Failed to send message. Please try again.');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Send Message';
+      }
 
       return false;
     }
@@ -1160,14 +1173,14 @@
       </button>
       <h2 class="text-2xl font-bold text-primary-500 mb-6 text-center">Canva Projects Gallery</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <img src="images/canva/kaby.jpeg" alt="Canva Project 1" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
-        <img src="images/canva/me.jpeg" alt="Canva Project 2" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
-        <img src="images/canva/MUBS.png" alt="Canva Project 3" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
-        <img src="images/canva/sk.jpeg" alt="Canva Project 4" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
-        <img src="images/canva/karu.jpeg" alt="Canva Project 5" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
-        <img src="images/canva/adonai.jpeg" alt="Canva Project 6" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
-        <img src="images/canva/mirror.jpeg" alt="Canva Project 7" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
-        <img src="images/canva/mukuru.jpeg" alt="Canva Project 8" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
+        <img src="images/canva/kaby.webp" alt="Canva Project 1" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
+        <img src="images/canva/me.webp" alt="Canva Project 2" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
+        <img src="images/canva/MUBS.webp" alt="Canva Project 3" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
+        <img src="images/canva/sk.webp" alt="Canva Project 4" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
+        <img src="images/canva/karu.webp" alt="Canva Project 5" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
+        <img src="images/canva/adonai.webp" alt="Canva Project 6" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
+        <img src="images/canva/mirror.webp" alt="Canva Project 7" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
+        <img src="images/canva/mukuru.webp" alt="Canva Project 8" class="canva-thumb rounded-lg object-cover w-full aspect-square shadow-md hover:scale-105 transition-transform duration-300"/>
       </div>
     </div>
   </div>
