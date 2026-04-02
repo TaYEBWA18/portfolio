@@ -220,7 +220,7 @@
         <li><a href="#services" class="block hover:text-primary-400 transition-colors duration-300">Services</a></li>
         <li><a href="#about" class="block hover:text-primary-400 transition-colors duration-300">About</a></li>
         <li><a href="#portfolio" class="block hover:text-primary-400 transition-colors duration-300">Portfolio</a></li>
-        <li><a href="#blog" class="block hover:text-primary-400 transition-colors duration-300">Blog</a></li>
+        <li><a href="#partners" class="block hover:text-primary-400 transition-colors duration-300">Partners</a></li>
         <li><a href="#contact" class="block hover:text-primary-400 transition-colors duration-300">Contact</a></li>
         <li>
           <a href="https://flowcv.com/resume/u61bjeujhwa4" class="block border-2 border-primary-500 text-primary-500 px-6 py-2 rounded-[20px] font-semibold text-center transition-all duration-300 hover:bg-primary-500 hover:text-white hover:scale-105">
@@ -344,7 +344,7 @@
             <button class="filter-btn active text-white hover:text-primary-500 transition-colors duration-300" data-filter="all">All</button>
             <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="laravel">Laravel</button>
             <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="fullstack">Full Stack</button>
-            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="api">API</button>
+            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="api">Websites</button>
         </div>
 
         <!-- Portfolio Grid -->
@@ -359,8 +359,8 @@
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
-                            <h4 class="text-white text-xl font-bold mb-2">Web Application</h4>
-                            <p class="text-gray-300">Laravel Project</p>
+                            <h4 class="text-white text-xl font-bold mb-2">Alloto Exclusives</h4>
+                            <p class="text-gray-300">WebApp Project</p>
                         </div>
                     </div>
                 </div>
@@ -376,7 +376,9 @@
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
-                            <h4 class="text-white text-xl font-bold mb-2">Management System</h4>
+                            <a href="https://app.furahabanking.com/" target="_blank" rel="noopener noreferrer">
+                                <h4 class="text-white text-xl font-bold mb-2">Microfinance System</h4>
+                            </a>
                             <p class="text-gray-300">Full Stack Project</p>
                         </div>
                     </div>
@@ -386,15 +388,20 @@
             <!-- Portfolio Item 3 -->
             <div class="portfolio-item group api" data-category="api">
                 <div class="relative overflow-hidden rounded-lg">
-                    <img src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=800&h=400&fit=crop&q=80&auto=format"
-                         alt="REST API development"
-                         class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
-                         loading="lazy" decoding="async"
-                    />
+                    <picture>
+                      <source srcset="images/bulindo_villas.webp" type="image/webp">
+                      <img src="images/bulindo_villas.jpeg"
+                           alt="BULINDO VILLAS website"
+                           class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                           loading="lazy" decoding="async"
+                      />
+                    </picture>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
-                            <h4 class="text-white text-xl font-bold mb-2">REST API</h4>
-                            <p class="text-gray-300">API Project</p>
+                          <a href="https://www.bulindovillas.com/" target="_blank" rel="noopener noreferrer">
+                            <h4 class="text-white text-xl font-bold mb-2">BULINDO VILLAS</h4>
+                          </a>
+                            <p class="text-gray-300">Website</p>
                         </div>
                     </div>
                 </div>
@@ -555,164 +562,160 @@
     </div>
   </section>
 
-  <!-- Blog Section -->
-  <section id="blog" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-900 relative overflow-hidden">
+  <!-- Partners Section -->
+  <section id="partners" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-900 relative overflow-hidden">
     <!-- Background decorative elements -->
-    <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
-    
+    <div class="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-500/10 rounded-full blur-3xl"></div>
+
     <div class="container mx-auto relative">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <h3 class="text-primary-500 text-xl mb-4">From My Blog</h3>
-        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Dev Tips, Tutorials &amp; Thoughts<br>From the Trenches</h2>
+        <h3 class="text-primary-500 text-xl mb-4">Trusted By</h3>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">Partners &amp; Clients</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">Organisations and businesses I've had the privilege to build for.</p>
       </div>
 
-      <!-- Blog Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
-        <!-- Blog Card 1 -->
-        <div class="group">
-          <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=256&fit=crop&q=80&auto=format"
-                 alt="Laravel framework code"
-                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                 loading="lazy" decoding="async"
-            />
-            <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
-              <div class="text-2xl font-bold">01</div>
-              <div class="text-sm">Apr</div>
-            </div>
-          </div>
-          <div class="space-y-4">
-              <div>
-                <span class="text-primary-500 font-medium">Laravel</span>
-              </div>
-              <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                Why Laravel is My Go-To Framework
-              </h3>
-            </div>
+      <!-- Partners Grid: 4 columns, 2 rows -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <!-- Partner 1 -->
+        <div class="partner-card group relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl
+                    bg-white/5 backdrop-blur-md border border-white/10
+                    shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
+                    hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
+                    hover:bg-white/10 transition-all duration-300">
+          <img src="images/digital_minds_africa_logo_v3.svg"
+               alt="Digital Minds Africa" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Digital Minds</span>
         </div>
 
-        <!-- Blog Card 2 -->
-        <div class="group">
-          <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=256&fit=crop&q=80&auto=format"
-                 alt="Project code structure"
-                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                 loading="lazy" decoding="async"
-            />
-            <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
-              <div class="text-2xl font-bold">28</div>
-              <div class="text-sm">Apr</div>
-            </div>
-          </div>
-          <div class="space-y-4">
-              <div>
-                <span class="text-primary-500 font-medium">Backend</span>
-              </div>
-              <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                Structuring a Laravel Project That Doesn't Fall Apart
-              </h3>
-            </div>
+        <!-- Partner 2 -->
+        <div class="partner-card group relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl
+                    bg-white/5 backdrop-blur-md border border-white/10
+                    shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
+                    hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
+                    hover:bg-white/10 transition-all duration-300">
+          <img src="https://furahatechnologies.com/img/logo.png"
+               alt="Partner 2" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Furaha Technologies</span>
         </div>
 
-        <!-- Blog Card 3 -->
-        <div class="group">
-          <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=256&fit=crop&q=80&auto=format"
-                 alt="Multi-tenant system architecture"
-                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                 loading="lazy" decoding="async"
-            />
-            <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
-              <div class="text-2xl font-bold">15</div>
-              <div class="text-sm">Jun</div>
-            </div>
-          </div>
-          <div class="space-y-4">
-              <div>
-                <span class="text-primary-500 font-medium">Full Stack</span>
-              </div>
-              <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                Building a Multi-Tenant System in Laravel
-              </h3>
-            </div>
+        <!-- Partner 3 -->
+        <div class="partner-card group relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl
+                    bg-white/5 backdrop-blur-md border border-white/10
+                    shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
+                    hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
+                    hover:bg-white/10 transition-all duration-300">
+          <picture>
+            <source srcset="images/Bulindo_logo.webp" type="image/webp">
+            <img src="images/Bulindo_logo.jpeg" alt="Bulindo Villas" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </picture>
+          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Bulindo Villas</span>
         </div>
 
-        <!-- Blog Card 4 (hidden by default) -->
-        <div class="group hidden extra-blog">
-          <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=256&fit=crop&q=80&auto=format"
-                 alt="MySQL database optimisation"
-                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                 loading="lazy" decoding="async"
-            />
-            <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
-              <div class="text-2xl font-bold">10</div>
-              <div class="text-sm">Jul</div>
-            </div>
-          </div>
-          <div class="space-y-4">
-              <div>
-                <span class="text-primary-500 font-medium">Database</span>
-              </div>
-              <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                MySQL Optimisation Tips Every Dev Should Know
-              </h3>
-            </div>
+        <!-- Partner 4 -->
+        <div class="partner-card group relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl
+                    bg-white/5 backdrop-blur-md border border-white/10
+                    shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
+                    hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
+                    hover:bg-white/10 transition-all duration-300">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABc
+          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"
+               alt="Partner 4" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Skoolnet Ug</span>
         </div>
 
-        <!-- Blog Card 5 (hidden by default) -->
-        <div class="group hidden extra-blog">
-          <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=256&fit=crop&q=80&auto=format"
-                 alt="JavaScript code"
-                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                 loading="lazy" decoding="async"
-            />
-            <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
-              <div class="text-2xl font-bold">22</div>
-              <div class="text-sm">Aug</div>
-            </div>
-          </div>
-          <div class="space-y-4">
-              <div>
-                <span class="text-primary-500 font-medium">JavaScript</span>
-              </div>
-              <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                Vanilla JS vs Frameworks: When to Choose What
-              </h3>
-            </div>
+        <!-- Partner 5 -->
+        <div class="partner-card group relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl
+                    bg-white/5 backdrop-blur-md border border-white/10
+                    shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
+                    hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
+                    hover:bg-white/10 transition-all duration-300">
+          <picture>
+            <source srcset="images/Alloto3.webp" type="image/webp">
+            <img src="images/Alloto3.jpeg" alt="Alloto Exclusives" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </picture>
+          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Alloto Exclusives</span>
         </div>
 
-        <!-- Blog Card 6 (hidden by default) -->
-        <div class="group hidden extra-blog">
-          <div class="relative overflow-hidden rounded-xl mb-6">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=256&fit=crop&q=80&auto=format"
-                 alt="VPS server deployment"
-                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                 loading="lazy" decoding="async"
-            />
-            <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-medium">
-              <div class="text-2xl font-bold">05</div>
-              <div class="text-sm">Sep</div>
-            </div>
-          </div>
-          <div class="space-y-4">
-              <div>
-                <span class="text-primary-500 font-medium">DevOps</span>
-              </div>
-              <h3 class="text-xl font-bold text-white group-hover:text-primary-500 transition-colors">
-                Deploying a Laravel App to a VPS From Scratch
-              </h3>
-            </div>
+        <!-- Partner 6 -->
+        <div class="partner-card group relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl
+                    bg-white/5 backdrop-blur-md border border-white/10
+                    shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
+                    hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
+                    hover:bg-white/10 transition-all duration-300">
+          <img src="https://placehold.co/120x60/1e293b/94a3b8?text=Partner+6&font=raleway"
+               alt="Partner 6" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Partner Name</span>
         </div>
-      </div>
-      <!-- View More / View Less Button -->
-      <div class="flex justify-center mt-8">
-        <button id="toggle-blogs" class="bg-primary-500 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-600 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">
-          View More
-        </button>
+
+        <!-- Partner 7 -->
+        <div class="partner-card group relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl
+                    bg-white/5 backdrop-blur-md border border-white/10
+                    shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
+                    hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
+                    hover:bg-white/10 transition-all duration-300">
+          <picture>
+            <source srcset="images/lims.webp" type="image/webp">
+            <img src="images/lims.jpeg" alt="LIMS" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </picture>
+          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">LIMS</span>
+        </div>
+
+        <!-- Partner 8 -->
+        <div class="partner-card group relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl
+                    bg-white/5 backdrop-blur-md border border-white/10
+                    shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
+                    hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
+                    hover:bg-white/10 transition-all duration-300">
+          <img src="https://streamlinehealth.org/wp-content/uploads/2024/12/streamline_logo.webp"
+               alt="Partner 8" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Streamline</span>
+        </div>
+
       </div>
     </div>
   </section>
@@ -871,7 +874,7 @@
     });
 
     // Sections array used by both scroll functionality and navigation
-    const sections = ['home', 'about', 'portfolio', 'services', 'blog'];
+    const sections = ['home', 'about', 'portfolio', 'services', 'partners'];
     const scrollButton = document.querySelector('.scroll-down-btn');
 
     // Optimized smooth scroll functionality
@@ -1148,21 +1151,6 @@
       return false;
     }
 
-    // Blog View More/View Less functionality
-    const toggleBlogsBtn = document.getElementById('toggle-blogs');
-    const extraBlogs = document.querySelectorAll('.extra-blog');
-    let blogsExpanded = false;
-    toggleBlogsBtn.addEventListener('click', function() {
-      blogsExpanded = !blogsExpanded;
-      extraBlogs.forEach(blog => {
-        if (blogsExpanded) {
-          blog.classList.remove('hidden');
-        } else {
-          blog.classList.add('hidden');
-        }
-      });
-      toggleBlogsBtn.textContent = blogsExpanded ? 'View Less' : 'View More';
-    });
   </script>
 
   <!-- Canva Modal -->
