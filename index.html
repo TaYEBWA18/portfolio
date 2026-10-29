@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tayebwa Simon | Full-Stack Web Developer</title>
-  <meta name="description" content="Simon Tayebwa — Full-Stack Web Developer based in Kampala, Uganda. Specialising in Laravel, PHP, MySQL, and JavaScript web applications and systems.">
-  <meta name="author" content="Tayebwa Simon">
-  <meta property="og:title" content="Tayebwa Simon | Full-Stack Web Developer">
-  <meta property="og:description" content="Full-Stack Web Developer based in Kampala, Uganda. Laravel, PHP, MySQL, and JavaScript.">
+  <title>Tayebwa Simon | Software Engineer</title>
+  <meta name="description" content="Tayebwa Simon Miracle, Software Engineer in Kampala, Uganda. Founding partner at Algosys, building core banking, school and laboratory management systems, web and mobile apps.">
+  <meta name="author" content="Tayebwa Simon Miracle">
+  <meta property="og:title" content="Tayebwa Simon | Software Engineer">
+  <meta property="og:description" content="Software Engineer in Kampala, Uganda. Core banking, business systems, web and mobile apps, product design.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/cline.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tayebwa Simon | Full-Stack Web Developer">
-  <meta name="twitter:description" content="Full-Stack Web Developer based in Kampala, Uganda.">
+  <meta name="twitter:title" content="Tayebwa Simon | Software Engineer">
+  <meta name="twitter:description" content="Software Engineer in Kampala, Uganda.">
   <meta name="twitter:image" content="images/cline.webp">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -62,6 +62,45 @@
       visibility: visible;
     }
     
+    /* Inline content links: gradient underline that grows on hover + arrow */
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4em;
+      color: #4FD1C5;
+      font-weight: 600;
+      text-decoration: none;
+      background-image: linear-gradient(90deg, #FF5252, #4FD1C5);
+      background-size: 0% 2px;
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      padding-bottom: 2px;
+      transition: color 0.3s ease, background-size 0.35s ease;
+    }
+    .text-link::after {
+      content: '\f08e';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 0.7em;
+      opacity: 0.6;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .text-link:hover,
+    .text-link:focus-visible {
+      color: #fff;
+      background-size: 100% 2px;
+    }
+    .text-link:hover::after,
+    .text-link:focus-visible::after {
+      opacity: 1;
+      transform: translate(2px, -2px);
+    }
+    .text-link:focus-visible {
+      outline: 2px solid #FF5252;
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
     /* Enhanced nav link animation */
     .nav-link {
       position: relative;
@@ -168,9 +207,31 @@
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    /* Progress Bar Styles */
-    .progress-bar {
-        transition: width 1.5s ease-in-out;
+    /* Skill Tags */
+    .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .skill-tags span {
+        font-size: 0.8rem;
+        color: #d1d5db;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 9999px;
+        padding: 0.25rem 0.75rem;
+    }
+
+    /* Experience Timeline */
+    .timeline-dot {
+        position: absolute;
+        left: -9px;
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        border-radius: 9999px;
+        background: #FF5252;
+        box-shadow: 0 0 0 4px rgba(255, 82, 82, 0.2);
     }
     /* Neomorphic Service Card Style */
     .neomorphic {
@@ -194,36 +255,41 @@
 <body class="min-h-screen text-white" style="background-color: #363e50;">
   <!-- Navbar -->
   <nav class="flex items-center justify-between px-4 md:px-10 py-6 relative">
-    <div class="flex items-center space-x-2">
+    <a href="#home" class="flex items-center space-x-2">
       <span class="text-3xl text-primary-500"><i class="fa-solid fa-code"></i></span>
       <span class="text-2xl font-bold">Taye<span class="text-primary-500">bwa</span></span>
-    </div>
-    
+    </a>
+
     <!-- Mobile Menu Button -->
-    <button id="mobile-menu-button" class="md:hidden text-2xl text-primary-500">
+    <button id="mobile-menu-button" class="lg:hidden text-2xl text-primary-500" aria-label="Open menu">
       <i class="fas fa-bars"></i>
     </button>
 
     <!-- Desktop Menu -->
-    <ul class="hidden md:flex space-x-8 text-lg font-medium">
-      <li><a href="#home" class="nav-link text-primary-500">Home</a></li>
-      <li><a href="#services" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Services</a></li>
+    <ul class="hidden lg:flex space-x-7 text-lg font-medium">
       <li><a href="#about" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">About</a></li>
-      <li><a href="#portfolio" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Portfolio</a></li>
+      <li><a href="#experience" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Experience</a></li>
+      <li><a href="#portfolio" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Projects</a></li>
+      <li><a href="#skills" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Skills</a></li>
+      <li><a href="#services" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Services</a></li>
+      <li><a href="#partners" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Clients</a></li>
       <li><a href="#contact" class="nav-link text-white hover:text-primary-400 transition-colors duration-300">Contact</a></li>
     </ul>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu absolute top-full left-0 w-full bg-gray-800 md:hidden z-50">
+    <div id="mobile-menu" class="mobile-menu absolute top-full left-0 w-full bg-gray-800 lg:hidden z-50">
       <ul class="flex flex-col space-y-4 p-4 text-lg">
         <li><a href="#home" class="block text-primary-500">Home</a></li>
-        <li><a href="#services" class="block hover:text-primary-400 transition-colors duration-300">Services</a></li>
         <li><a href="#about" class="block hover:text-primary-400 transition-colors duration-300">About</a></li>
-        <li><a href="#portfolio" class="block hover:text-primary-400 transition-colors duration-300">Portfolio</a></li>
-        <li><a href="#partners" class="block hover:text-primary-400 transition-colors duration-300">Partners</a></li>
+        <li><a href="#experience" class="block hover:text-primary-400 transition-colors duration-300">Experience</a></li>
+        <li><a href="#portfolio" class="block hover:text-primary-400 transition-colors duration-300">Projects</a></li>
+        <li><a href="#skills" class="block hover:text-primary-400 transition-colors duration-300">Skills</a></li>
+        <li><a href="#services" class="block hover:text-primary-400 transition-colors duration-300">Services</a></li>
+        <li><a href="#awards" class="block hover:text-primary-400 transition-colors duration-300">Recognition</a></li>
+        <li><a href="#partners" class="block hover:text-primary-400 transition-colors duration-300">Clients</a></li>
         <li><a href="#contact" class="block hover:text-primary-400 transition-colors duration-300">Contact</a></li>
         <li>
-          <a href="https://flowcv.com/resume/u61bjeujhwa4" class="block border-2 border-primary-500 text-primary-500 px-6 py-2 rounded-[20px] font-semibold text-center transition-all duration-300 hover:bg-primary-500 hover:text-white hover:scale-105">
+          <a href="https://flowcv.com/resume/u61bjeujhwa4" target="_blank" rel="noopener" class="block border-2 border-primary-500 text-primary-500 px-6 py-2 rounded-[20px] font-semibold text-center transition-all duration-300 hover:bg-primary-500 hover:text-white hover:scale-105">
             <i class="fas fa-file-alt mr-2"></i>View CV
           </a>
         </li>
@@ -231,7 +297,7 @@
     </div>
 
     <!-- Desktop View CV Button -->
-    <a href="https://flowcv.com/resume/u61bjeujhwa4" class="hidden md:inline-block border-2 border-primary-500 text-primary-500 px-6 py-2 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-500 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">
+    <a href="https://flowcv.com/resume/u61bjeujhwa4" target="_blank" rel="noopener" class="hidden lg:inline-block border-2 border-primary-500 text-primary-500 px-6 py-2 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-500 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">
       <i class="fas fa-file-alt mr-2"></i>View CV
     </a>
   </nav>
@@ -241,20 +307,22 @@
     <!-- Left: Text -->
     <div class="flex-1">
       <h2 class="text-2xl text-primary-500 font-semibold mb-2">Hello, I'm</h2>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Simon Tayebwa</h1>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Tayebwa Simon</h1>
       <p class="text-xl mb-2">
-        A <span class="text-accent-400">Full-Stack Developer</span> From <span class="text-primary-400">Kampala</span>
+        A <span class="text-accent-400">Software Engineer</span> From <span class="text-primary-400">Kampala, Uganda</span>
       </p>
       <p class="text-gray-200 mb-8 max-w-lg">
-        I'm a passionate full-stack web developer from Kampala, building robust websites and web-based systems — with Laravel as my weapon of choice.
+        Software developer and founding partner at Algosys, where I build core banking software for banks, SACCOs and microfinance institutions.
+        I design, build and deploy web and mobile systems, and I work with the people who use them, from product specs to user training.
       </p>
       <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-        <a href="#about" class="btn-primary inline-block bg-primary-500 text-white px-8 py-3 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-600 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">About Me</a>
+        <a href="#contact" class="btn-primary inline-block bg-primary-500 text-white px-8 py-3 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-600 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">Hire Me</a>
         <div class="flex space-x-4 text-xl">
-          <a href="https://www.instagram.com/tayebw_a?igsh=MTJodzlpcGtnZnk3Zw==" class="social-link text-gray-300"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com/TayebwaSimon7?s=09" class="social-link text-gray-300"><i class="fab fa-twitter"></i></a>
-          <a href="https://ug.linkedin.com/in/simon-tayebwa-690a35239" class="social-link text-gray-300"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/TaYEBWA18" class="social-link text-gray-300"><i class="fab fa-github"></i></a>
+          <a href="https://ug.linkedin.com/in/simon-tayebwa-690a35239" target="_blank" rel="noopener" class="social-link text-gray-300" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/TaYEBWA18" target="_blank" rel="noopener" class="social-link text-gray-300" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://wa.me/256773630874" target="_blank" rel="noopener" class="social-link text-gray-300" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://x.com/TayebwaSimon7?s=09" target="_blank" rel="noopener" class="social-link text-gray-300" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/tayebw_a?igsh=MTJodzlpcGtnZnk3Zw==" target="_blank" rel="noopener" class="social-link text-gray-300" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -266,7 +334,7 @@
       <div class="relative">
         <picture>
           <source srcset="images/edited_photo_no_shadow.webp" type="image/webp">
-          <img src="images/edited_photo_no_shadow.jpg" alt="keed" class="w-72 md:w-80 lg:w-96 h-96 md:h-[26rem] lg:h-[30rem] object-cover object-top"
+          <img src="images/edited_photo_no_shadow.jpg" alt="Tayebwa Simon" class="w-72 md:w-80 lg:w-96 h-96 md:h-[26rem] lg:h-[30rem] object-cover object-top"
             loading="eager"
             fetchpriority="high"
           />
@@ -275,11 +343,11 @@
         <span class="absolute top-4 left-0 bg-[#363e50]/90 backdrop-blur-sm text-red-400 font-bold px-3 py-2 rounded-lg shadow-lg flex items-center gap-2">
           <i class="fab fa-laravel text-xl"></i><span class="text-white text-sm">Laravel</span>
         </span>
-        <span class="absolute top-10 right-0 bg-[#363e50]/90 backdrop-blur-sm text-indigo-400 font-bold px-3 py-2 rounded-lg shadow-lg flex items-center gap-2">
-          <i class="fab fa-php text-xl"></i><span class="text-white text-sm">PHP</span>
+        <span class="absolute top-10 right-0 bg-[#363e50]/90 backdrop-blur-sm text-sky-400 font-bold px-3 py-2 rounded-lg shadow-lg flex items-center gap-2">
+          <i class="fab fa-react text-xl"></i><span class="text-white text-sm">React</span>
         </span>
         <span class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#363e50]/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg flex items-center gap-2">
-          <i class="fab fa-js-square text-yellow-400 text-xl"></i><span class="text-white text-sm">JavaScript</span>
+          <i class="fab fa-figma text-pink-400 text-xl"></i><span class="text-white text-sm">Product &amp; UI Design</span>
         </span>
       </div>
     </div>
@@ -299,107 +367,212 @@
             />
             <!-- Stats Overlay -->
             <div class="absolute -top-8 left-8 bg-gray-900/90 backdrop-blur-sm text-primary-400 p-4 rounded-lg shadow-lg border border-primary-500/20">
-              <span class="text-4xl font-bold counter" data-target="5">0</span>
-              <p class="text-sm text-gray-400">Years of Experience</p>
+              <span class="text-4xl font-bold counter" data-target="3">0</span><span class="text-4xl font-bold">+</span>
+              <p class="text-sm text-gray-400">Years in Industry</p>
             </div>
             <div class="absolute -bottom-8 right-8 bg-gray-900 text-primary-400 p-4 rounded-lg shadow-lg">
-              <span class="text-4xl font-bold counter" data-target="50">0</span>
-              <p class="text-sm text-gray-400">Projects Delivered</p>
+              <span class="text-4xl font-bold counter" data-target="12">0</span><span class="text-4xl font-bold">+</span>
+              <p class="text-sm text-gray-400">Clients &amp; Partners</p>
             </div>
           </div>
         </div>
-        
+
         <!-- Right Side - Content -->
         <div class="lg:w-1/2">
-          <h3 class="text-primary-500 text-xl mb-4">I'm a Developer</h3>
-          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">I Build Full-Stack Web Solutions</h2>
-          <p class="text-gray-400 mb-8">
-            With five years of hands-on experience in full-stack web development,
-            I specialise in building fast, scalable, and maintainable web applications.
-            My stack is centred around Laravel and PHP on the backend, paired with
-            modern JavaScript on the frontend. From database architecture to deployment,
-            I own the full process — and I enjoy every step of it.
-            Let's build something remarkable together.
+          <h3 class="text-primary-500 text-xl mb-4">About Me</h3>
+          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">I Build Software People Rely On</h2>
+          <p class="text-gray-400 mb-4">
+            I'm a software engineer with a BSc in Software Engineering from Mbarara University of Science and Technology.
+            As a founding partner at Algosys, I design and maintain Algosys CBS, a core banking platform for banks,
+            SACCOs and money-lending businesses, and I onboard and deploy instances for new clients.
           </p>
-          <a href="#contact" class="btn-primary inline-block bg-primary-500 text-white px-8 py-3 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-600 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">Hire Me</a>
+          <p class="text-gray-400 mb-8">
+            My work goes beyond code. At Streamline Health Tech I worked as an Associate Product Manager and Designer,
+            turning client requirements into specifications, running user acceptance testing and managing releases.
+            I also served as a District IT Support Officer for the Electoral Commission during Uganda's General Elections.
+          </p>
+
+          <!-- Quick facts -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-graduation-cap text-primary-500 mt-1"></i>
+              <div>
+                <p class="text-white font-semibold">BSc Software Engineering</p>
+                <p class="text-gray-400 text-sm">MUST, 2021 – 2024</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-location-dot text-primary-500 mt-1"></i>
+              <div>
+                <p class="text-white font-semibold">Kampala, Uganda</p>
+                <p class="text-gray-400 text-sm">Available for remote work</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 sm:col-span-2">
+              <i class="fas fa-language text-primary-500 mt-1"></i>
+              <div>
+                <p class="text-white font-semibold">Languages</p>
+                <p class="text-gray-400 text-sm">English, Luganda, Lusoga, Kiswahili, Runyankore-Rukiga</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#contact" class="btn-primary inline-block bg-primary-500 text-white px-8 py-3 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-600 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20">Hire Me</a>
+            <a href="https://flowcv.com/resume/u61bjeujhwa4" target="_blank" rel="noopener" class="inline-block border-2 border-primary-500 text-primary-500 px-8 py-3 rounded-[20px] font-semibold transition-all duration-300 hover:bg-primary-500 hover:text-white">View CV</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Experience Section -->
+  <section id="experience" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-900 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-accent-500/10 rounded-full blur-3xl"></div>
+
+    <div class="container mx-auto relative max-w-4xl">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h3 class="text-primary-500 text-xl mb-4">Career</h3>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Professional Experience</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Software development, product management and IT support across fintech, health tech and public service.
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <ol class="timeline relative border-l-2 border-primary-500/30 ml-3 space-y-12">
+
+        <!-- Algosys -->
+        <li class="relative pl-8">
+          <span class="timeline-dot"></span>
+          <p class="text-sm text-primary-400 font-semibold mb-1">01/2023 – Present</p>
+          <h3 class="text-2xl font-bold text-white">Software Developer &amp; Founding Partner</h3>
+          <p class="text-accent-400 mb-3"><a href="https://algosys.co.ug" target="_blank" rel="noopener" class="text-link">Algosys Company Limited</a></p>
+        </li>
+
+        <!-- Digital Minds Africa -->
+        <li class="relative pl-8">
+          <span class="timeline-dot"></span>
+          <p class="text-sm text-primary-400 font-semibold mb-1">06/2025 – Present · Remote</p>
+          <h3 class="text-2xl font-bold text-white">Software Developer</h3>
+          <p class="text-accent-400 mb-3"><a href="https://digitalmindsafrica.org/" target="_blank" rel="noopener" class="text-link">Digital Minds Africa</a></p>
+        </li>
+
+        <!-- Electoral Commission -->
+        <li class="relative pl-8">
+          <span class="timeline-dot"></span>
+          <p class="text-sm text-primary-400 font-semibold mb-1">11/2025 – 06/2026 · Midwest region</p>
+          <h3 class="text-2xl font-bold text-white">IT Support Officer</h3>
+          <p class="text-accent-400 mb-3"><a href="https://www.electoralcommission.org.ug" target="_blank" rel="noopener" class="text-link">Electoral Commission, Uganda</a></p>
+        </li>
+
+        <!-- Streamline Health -->
+        <li class="relative pl-8">
+          <span class="timeline-dot"></span>
+          <p class="text-sm text-primary-400 font-semibold mb-1">07/2024 – 11/2025 · Kampala</p>
+          <h3 class="text-2xl font-bold text-white">Associate Product Manager / Designer</h3>
+          <p class="text-accent-400 mb-3"><a href="https://streamlinehealth.org/" target="_blank" rel="noopener" class="text-link">Streamline Health Tech Ltd.</a></p>
+    
+        </li>
+
+        <!-- Training & placements -->
+        <li class="relative pl-8">
+          <span class="timeline-dot"></span>
+          <p class="text-sm text-primary-400 font-semibold mb-1">During university</p>
+          <h3 class="text-2xl font-bold text-white mb-4">Training &amp; Placements</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="neomorphic p-5">
+              <p class="text-white font-semibold"><a href="https://ict.go.ug/" target="_blank" rel="noopener" class="text-link">Uganda Telecommunications Corporation</a></p>
+              <p class="text-sm text-accent-400 mb-2">Field Engineering Assistant Trainee · 2023</p>
+            </div>
+            <div class="neomorphic p-5">
+              <p class="text-white font-semibold"><a href="https://www.hitechinfosys.com" target="_blank" rel="noopener" class="text-link">Hitech Infosys Limited</a></p>
+              <p class="text-sm text-accent-400 mb-2">Project Associate Trainee · 2022 – 2023</p>
+              
+            </div>
+            <div class="neomorphic p-5">
+              <p class="text-white font-semibold"> <a href="https://utel.co.ug" target="_blank" rel="noopener" class="text-link">Ministry of ICT &amp; National Guidance</a></p>
+              <p class="text-sm text-accent-400 mb-2">Research &amp; Development Trainee</p>
+              
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
   <!-- Portfolio Section -->
-  <section id="portfolio" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-900">
+  <section id="portfolio" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-800">
     <div class="container mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-12">
             <h3 class="text-primary-500 text-xl mb-4">Portfolio</h3>
-            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">My Recent Projects</h2>
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Projects</h2>
             <p class="text-gray-400 max-w-2xl mx-auto">
-              A selection of web applications and systems I've built — from full-stack platforms to custom APIs.
+              Business systems, client websites, mobile apps and research, from core banking to school management.
             </p>
         </div>
 
         <!-- Portfolio Filter -->
         <div class="flex flex-wrap justify-center gap-6 mb-12">
             <button class="filter-btn active text-white hover:text-primary-500 transition-colors duration-300" data-filter="all">All</button>
-            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="laravel">Laravel</button>
-            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="fullstack">Full Stack</button>
-            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="api">Websites</button>
+            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="systems">Systems</button>
+            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="web">Websites</button>
+            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="mobile">Mobile &amp; Libraries</button>
+            <button class="filter-btn text-gray-400 hover:text-primary-500 transition-colors duration-300" data-filter="research">Research</button>
         </div>
 
-        <!-- Portfolio Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            <!-- Portfolio Item 1 -->
-            <div class="portfolio-item group laravel" data-category="laravel">
+        <!-- Featured client work -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            <div class="portfolio-item group web">
                 <div class="relative overflow-hidden rounded-lg">
                     <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80&auto=format"
-                         alt="Laravel web application code"
-                         class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                         alt="Alloto Exclusives web app"
+                         class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110"
                          loading="lazy" decoding="async"
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
                             <h4 class="text-white text-xl font-bold mb-2">Alloto Exclusives</h4>
-                            <p class="text-gray-300">WebApp Project</p>
+                            <p class="text-gray-300">Web App</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Portfolio Item 2 -->
-            <div class="portfolio-item group fullstack" data-category="fullstack">
+            <div class="portfolio-item group systems">
                 <div class="relative overflow-hidden rounded-lg">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80&auto=format"
-                         alt="Management system dashboard"
-                         class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                         alt="Microfinance system dashboard"
+                         class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110"
                          loading="lazy" decoding="async"
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
-                            <a href="https://app.furahabanking.com/" target="_blank" rel="noopener noreferrer">
-                                <h4 class="text-white text-xl font-bold mb-2">Microfinance System</h4>
+                            <a href="https://app.furahabanking.com/" target="_blank" rel="noopener noreferrer" class="text-link text-white mb-2">
+                                <h4 class="text-xl font-bold">Microfinance System</h4>
                             </a>
-                            <p class="text-gray-300">Full Stack Project</p>
+                            <p class="text-gray-300">Full-Stack System</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Portfolio Item 3 -->
-            <div class="portfolio-item group api" data-category="api">
+            <div class="portfolio-item group web">
                 <div class="relative overflow-hidden rounded-lg">
                     <picture>
                       <source srcset="images/bulindo_villas.webp" type="image/webp">
                       <img src="images/bulindo_villas.jpeg"
-                           alt="BULINDO VILLAS website"
-                           class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                           alt="Bulindo Villas website"
+                           class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110"
                            loading="lazy" decoding="async"
                       />
                     </picture>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div class="p-6">
-                          <a href="https://www.bulindovillas.com/" target="_blank" rel="noopener noreferrer">
-                            <h4 class="text-white text-xl font-bold mb-2">BULINDO VILLAS</h4>
+                          <a href="https://www.bulindovillas.com/" target="_blank" rel="noopener noreferrer" class="text-link text-white mb-2">
+                            <h4 class="text-xl font-bold">Bulindo Villas</h4>
                           </a>
                             <p class="text-gray-300">Website</p>
                         </div>
@@ -408,98 +581,159 @@
             </div>
         </div>
 
-        <!-- Skills Section -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Left Side: Content -->
-            <div class="flex flex-col justify-center">
-                <h3 class="text-primary-500 text-xl mb-4">Code is Life</h3>
-                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">I keep my skills sharp to deliver modern, production-ready solutions my clients can rely on.</h2>
-                <p class="text-gray-400 mb-8">
-                    "If you stay in the kitchen long enough, you'll definitely eat!"
-                </p>
+        <!-- More projects -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="portfolio-item systems neomorphic p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <i class="fas fa-building-columns text-2xl text-primary-500"></i>
+                    <span class="text-xs text-gray-400">2023 – Present</span>
+                </div>
+                <h4 class="text-white text-xl font-bold mb-2">Algosys CBS</h4>
+                <p class="text-gray-400 text-sm mb-4">Core banking platform for banks, SACCOs and money lenders: lending, savings, client onboarding and real-time records.</p>
+                <span class="text-xs text-accent-400">Core Banking · Web &amp; Mobile</span>
             </div>
 
-            <!-- Right Side: Skills -->
-            <div class="space-y-8">
+            <div class="portfolio-item systems neomorphic p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <i class="fas fa-school text-2xl text-primary-500"></i>
+                    <span class="text-xs text-gray-400">2025 – Present</span>
+                </div>
+                <h4 class="text-white text-xl font-bold mb-2">SkoolNet</h4>
+                <p class="text-gray-400 text-sm mb-4">Smart EMIS for admissions, fees, assessments and finance. One place for schools. Project partner.</p>
+                <span class="text-xs text-accent-400">School Management</span>
+            </div>
 
-              <!-- Laravel Skill -->
-              <div class="skill-item">
-                <div class="flex justify-between mb-2">
-                    <span class="text-white">Laravel</span>
-                    <span class="text-orange-500">90%</span>
+            <div class="portfolio-item systems neomorphic p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <i class="fas fa-flask text-2xl text-primary-500"></i>
+                    <span class="text-xs text-gray-400">08/2025 – In progress</span>
                 </div>
-                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                    <div class="progress-bar bg-orange-500 h-full rounded-full" data-progress="90" style="width: 0%"></div>
-                </div>
-              </div>
+                <h4 class="text-white text-xl font-bold mb-2">LIMS</h4>
+                <p class="text-gray-400 text-sm mb-4">Laboratory information management system for the URA Science Laboratory.</p>
+                <span class="text-xs text-accent-400">Laboratory Management</span>
+            </div>
 
-              <!-- PHP Skill -->
-              <div class="skill-item">
-                <div class="flex justify-between mb-2">
-                    <span class="text-white">PHP</span>
-                    <span class="text-primary-500">88%</span>
+            <div class="portfolio-item mobile neomorphic p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <i class="fas fa-shield-halved text-2xl text-primary-500"></i>
+                    <span class="text-xs text-gray-400">2023</span>
                 </div>
-                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                    <div class="progress-bar bg-primary-500 h-full rounded-full" data-progress="88" style="width: 0%"></div>
-                </div>
-              </div>
+                <h4 class="text-white text-xl font-bold mb-2">City Hero</h4>
+                <p class="text-gray-400 text-sm mb-4">A surveillance assistant mobile application.</p>
+                <span class="text-xs text-accent-400">Mobile App</span>
+            </div>
 
-              <!-- MySQL Skill -->
-              <div class="skill-item">
-                <div class="flex justify-between mb-2">
-                    <span class="text-white">MySQL</span>
-                    <span class="text-green-500">85%</span>
+            <div class="portfolio-item mobile neomorphic p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <i class="fas fa-camera text-2xl text-primary-500"></i>
+                    <span class="text-xs text-gray-400">2023</span>
                 </div>
-                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                    <div class="progress-bar bg-green-500 h-full rounded-full" data-progress="85" style="width: 0%"></div>
-                </div>
-              </div>
+                <h4 class="text-white text-xl font-bold mb-2">CamLib</h4>
+                <p class="text-gray-400 text-sm mb-4">A software library that helps imaging applications optimise image size and quality during upload and storage.</p>
+                <span class="text-xs text-accent-400">Library</span>
+            </div>
 
-              <!-- JavaScript Skill -->
-              <div class="skill-item">
-                <div class="flex justify-between mb-2">
-                    <span class="text-white">JavaScript</span>
-                    <span class="text-yellow-500">80%</span>
+            <div class="portfolio-item mobile neomorphic p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <i class="fas fa-car-side text-2xl text-primary-500"></i>
+                    <span class="text-xs text-gray-400">2021</span>
                 </div>
-                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                    <div class="progress-bar bg-yellow-500 h-full rounded-full" data-progress="80" style="width: 0%"></div>
-                </div>
-              </div>
+                <h4 class="text-white text-xl font-bold mb-2">Pearl Rides</h4>
+                <p class="text-gray-400 text-sm mb-4">A mobile app for rentable car pooling that uses geolocation to help reduce traffic congestion.</p>
+                <span class="text-xs text-accent-400">Mobile App</span>
+            </div>
 
-              <!-- HTML & CSS Skill -->
-              <div class="skill-item">
-                <div class="flex justify-between mb-2">
-                    <span class="text-white">HTML &amp; CSS</span>
-                    <span class="text-purple-500">90%</span>
+            <div class="portfolio-item systems neomorphic p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <i class="fas fa-database text-2xl text-primary-500"></i>
+                    <span class="text-xs text-gray-400">2022</span>
                 </div>
-                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                    <div class="progress-bar bg-purple-500 h-full rounded-full" data-progress="90" style="width: 0%"></div>
+                <h4 class="text-white text-xl font-bold mb-2">BPO Database</h4>
+                <p class="text-gray-400 text-sm mb-4">A system for collecting information about BPO companies partnering with the Ministry of ICT Uganda.</p>
+                <span class="text-xs text-accent-400">Government · Data Collection</span>
+            </div>
+
+            <div class="portfolio-item research neomorphic p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <i class="fas fa-fingerprint text-2xl text-primary-500"></i>
+                    <span class="text-xs text-gray-400">2022</span>
                 </div>
-              </div>
+                <h4 class="text-white text-xl font-bold mb-2">MOSIP Research</h4>
+                <p class="text-gray-400 text-sm mb-4">Research on the Modular Open Source Identity Platform for the Ministry of ICT's Department of Research and Development.</p>
+                <span class="text-xs text-accent-400">Digital Identity · Research</span>
             </div>
         </div>
     </div>
   </section>
 
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-900">
+    <div class="container mx-auto">
+      <div class="text-center mb-16">
+        <h3 class="text-primary-500 text-xl mb-4">Code is Life</h3>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Skills &amp; Tools</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">"If you stay in the kitchen long enough, you'll definitely eat!"</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-code text-primary-500 mr-2"></i>Programming</h3>
+          <div class="skill-tags"><span>PHP / Laravel</span><span>JavaScript</span><span>React</span><span>Dart</span><span>Python</span><span>Java</span><span>SQL</span></div>
+        </div>
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-globe text-primary-500 mr-2"></i>Web Development</h3>
+          <div class="skill-tags"><span>HTML</span><span>CSS</span><span>Tailwind</span><span>Bootstrap</span><span>WordPress</span></div>
+        </div>
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-pen-nib text-primary-500 mr-2"></i>Graphics &amp; UI Design</h3>
+          <div class="skill-tags"><span>Figma</span><span>Canva</span><span>Inkscape</span><span>Adobe Photoshop</span><span>Adobe Illustrator</span></div>
+        </div>
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-diagram-project text-primary-500 mr-2"></i>Product &amp; Quality</h3>
+          <div class="skill-tags"><span>Product management</span><span>User-centred design</span><span>Requirements &amp; specs</span><span>UAT</span><span>Release planning</span></div>
+        </div>
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-chalkboard-user text-primary-500 mr-2"></i>Support &amp; Training</h3>
+          <div class="skill-tags"><span>User &amp; system training</span><span>System documentation</span><span>User manuals</span><span>Customer support</span></div>
+        </div>
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-server text-primary-500 mr-2"></i>IT &amp; Infrastructure</h3>
+          <div class="skill-tags"><span>Hardware servicing</span><span>Troubleshooting</span><span>Networking</span><span>Fibre installation</span></div>
+        </div>
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-file-lines text-primary-500 mr-2"></i>Proposal &amp; Report Writing</h3>
+          <div class="skill-tags"><span>LaTeX</span><span>MS Word</span><span>Google Docs</span></div>
+        </div>
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-robot text-primary-500 mr-2"></i>AI &amp; Prompt Engineering</h3>
+          <div class="skill-tags"><span>LLM chatbots</span><span>AI-integrated tools</span><span>Prompt engineering</span></div>
+        </div>
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-screwdriver-wrench text-primary-500 mr-2"></i>Tools</h3>
+          <div class="skill-tags"><span>VS Code</span><span>Cursor</span><span>JetBrains</span><span>Sublime</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Services Section -->
-  <section id="services" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-900 relative overflow-hidden">
+  <section id="services" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-800 relative overflow-hidden">
     <!-- Background decorative elements -->
     <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
-    
+
     <div class="container mx-auto relative">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">What I Build for Clients</h2>
+        <h3 class="text-primary-500 text-xl mb-4">Services</h3>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">What I Can Do for You</h2>
         <p class="text-gray-400 max-w-2xl mx-auto">
-          From backend systems to polished frontends, I deliver complete, production-ready web solutions
-          tailored to real business needs.
+          From the first requirements meeting to training your team on the finished system.
         </p>
       </div>
 
       <!-- Services Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Full-Stack Development Service -->
         <div class="neomorphic bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 group transition-all duration-300">
           <div class="flex items-start gap-6">
             <div class="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0">
@@ -508,53 +742,50 @@
               </svg>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-white mb-4">Full-Stack Development</h3>
-              <p class="text-gray-400 mb-4">End-to-end web application development using Laravel on the backend and modern JavaScript on the frontend. I handle everything from database design to UI, delivering complete, maintainable systems that scale with your business.</p>
+              <h3 class="text-2xl font-bold text-white mb-4">Web Apps &amp; Business Systems</h3>
+              <p class="text-gray-400 mb-4">Full-stack systems built with Laravel, React and SQL, such as core banking, school management and laboratory management. I turn complex workflows into reliable software.</p>
             </div>
           </div>
         </div>
 
-        <!-- Backend / API Service -->
         <div class="neomorphic bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 group transition-all duration-300">
           <div class="flex items-start gap-6">
             <div class="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0">
               <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
               </svg>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-white mb-4">Backend &amp; API Development</h3>
-              <p class="text-gray-400 mb-4">Robust, secure REST APIs and backend systems built with Laravel and PHP. Whether integrating third-party services, building admin panels, or architecting multi-tenant systems, I write clean code that's easy to maintain and extend.</p>
+              <h3 class="text-2xl font-bold text-white mb-4">Mobile Applications</h3>
+              <p class="text-gray-400 mb-4">Mobile apps that work alongside your web platform, from banking companion apps to geolocation and imaging apps.</p>
             </div>
           </div>
         </div>
 
-        <!-- Web-Based Systems Service -->
         <div class="neomorphic bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 group transition-all duration-300">
           <div class="flex items-start gap-6">
             <div class="w-16 h-16 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0">
               <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
               </svg>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-white mb-4">Web-Based Systems</h3>
-              <p class="text-gray-400 mb-4">Custom business systems — inventory management, school management, booking platforms, and more. I translate complex workflows into intuitive web interfaces backed by solid database architecture and business logic.</p>
+              <h3 class="text-2xl font-bold text-white mb-4">Product &amp; UI/UX Design</h3>
+              <p class="text-gray-400 mb-4">Requirements gathering, feature specifications, Figma mockups and prototypes, and user acceptance testing, so what gets built is what you need.</p>
             </div>
           </div>
         </div>
 
-        <!-- Database & Optimisation Service -->
         <div class="neomorphic bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 group transition-all duration-300">
           <div class="flex items-start gap-6">
             <div class="w-16 h-16 rounded-full bg-yellow-500/10 flex items-center justify-center flex-shrink-0">
               <svg class="w-8 h-8 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
               </svg>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-white mb-4">Database Design &amp; Optimisation</h3>
-              <p class="text-gray-400 mb-4">Well-structured MySQL schemas, efficient queries, and Eloquent ORM patterns that keep applications fast under load. I design databases that grow with your product rather than become a bottleneck.</p>
+              <h3 class="text-2xl font-bold text-white mb-4">Deployment, Support &amp; Training</h3>
+              <p class="text-gray-400 mb-4">Client onboarding, system deployment and integrations, plus documentation, user manuals and hands-on training for your staff.</p>
             </div>
           </div>
         </div>
@@ -562,8 +793,77 @@
     </div>
   </section>
 
+  <!-- Awards Section -->
+  <section id="awards" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-900">
+    <div class="container mx-auto">
+      <div class="text-center mb-16">
+        <h3 class="text-primary-500 text-xl mb-4">Beyond Code</h3>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Leadership &amp; Recognition</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Awards, leadership roles and courses from university and community service.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div class="neomorphic p-6">
+          <i class="fas fa-trophy text-2xl text-yellow-500 mb-3"></i>
+          <h4 class="text-white font-bold">Rotaractor of the Year</h4>
+          <p class="text-sm text-accent-400 mb-2">Rotaract Club of MUST · 2024</p>
+          <p class="text-sm text-gray-400">Most outstanding member for the Hope Creation Year 2023–2024.</p>
+        </div>
+        <div class="neomorphic p-6">
+          <i class="fas fa-users text-2xl text-primary-500 mb-3"></i>
+          <h4 class="text-white font-bold">Class President</h4>
+          <p class="text-sm text-accent-400 mb-2">MUST, Software Engineering 2020–2024 · 2024</p>
+          <p class="text-sm text-gray-400">Certificate of Appreciation from the Faculty of Computing and Informatics.</p>
+        </div>
+        <div class="neomorphic p-6">
+          <i class="fas fa-landmark text-2xl text-primary-500 mb-3"></i>
+          <h4 class="text-white font-bold">Guild Representative Councillor</h4>
+          <p class="text-sm text-accent-400 mb-2">MUST Guild · 2022</p>
+          <p class="text-sm text-gray-400">Certificate of Merit for representing the Department of Software Engineering.</p>
+        </div>
+        <div class="neomorphic p-6">
+          <i class="fas fa-lightbulb text-2xl text-yellow-500 mb-3"></i>
+          <h4 class="text-white font-bold">CITT Innovation Awards Nominee</h4>
+          <p class="text-sm text-accent-400 mb-2">Faculty of Computing &amp; Informatics, MUST · 2023</p>
+          <p class="text-sm text-gray-400">Certificate of Recognition for participating after nomination.</p>
+        </div>
+        <div class="neomorphic p-6">
+          <i class="fas fa-microphone text-2xl text-primary-500 mb-3"></i>
+          <h4 class="text-white font-bold">Debate Leadership</h4>
+          <p class="text-sm text-accent-400 mb-2">MUST &amp; Western Uganda University Debate Societies · 2023</p>
+          <p class="text-sm text-gray-400">Publicity Secretary of the MUST Debate Society and adjudicator at the Western Uganda University Debate Championship.</p>
+        </div>
+        <div class="neomorphic p-6">
+          <i class="fas fa-medal text-2xl text-yellow-500 mb-3"></i>
+          <h4 class="text-white font-bold">National Inter-Patrol Winners</h4>
+          <p class="text-sm text-accent-400 mb-2">Uganda Scouts Association · 2018</p>
+          <p class="text-sm text-gray-400">Won the National Scouts Inter-Patrol Competitions at the National Camping Grounds.</p>
+        </div>
+      </div>
+
+      <!-- Courses & Community -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-certificate text-primary-500 mr-2"></i>Courses &amp; Certificates</h3>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><span class="text-white">The Foundations of Cyber Security</span> · Coursera, University System of Georgia</li>
+            <li><span class="text-white">CISCO CCNA Networking Bootcamp</span> · Makerere University CoCIS, 2023</li>
+            <li><span class="text-white">Rotary Youth Leadership Awards (RYLA)</span> · Rotary District 9211</li>
+          </ul>
+        </div>
+        <div class="neomorphic p-6">
+          <h3 class="text-white text-lg font-bold mb-4"><i class="fas fa-hands-holding-circle text-primary-500 mr-2"></i>Community</h3>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><span class="text-white">Rotaract Club of MUST</span> · Member, 2023 – 2025 (Rotaractor of the Month, 2023)</li>
+            <li><span class="text-white">Watoto Church Mbarara</span> · Volunteer, Sponsorship &amp; Partnership Desk, 2022 – 2024, and Cell Leader</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Partners Section -->
-  <section id="partners" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-900 relative overflow-hidden">
+  <section id="partners" class="py-20 px-4 md:px-10 lg:px-24 bg-gray-800 relative overflow-hidden">
     <!-- Background decorative elements -->
     <div class="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-500/10 rounded-full blur-3xl"></div>
@@ -573,11 +873,12 @@
       <div class="text-center mb-16">
         <h3 class="text-primary-500 text-xl mb-4">Trusted By</h3>
         <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">Partners &amp; Clients</h2>
-        <p class="text-gray-400 max-w-xl mx-auto">Organisations and businesses I've had the privilege to build for.</p>
+        <p class="text-gray-400 max-w-xl mx-auto">Organisations and businesses I've built for and partnered with.</p>
       </div>
 
-      <!-- Partners Grid: 4 columns, 2 rows -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Partners Marquee: sliding horizontal line -->
+      <div class="partners-marquee overflow-hidden py-2">
+      <div class="partners-track flex gap-6 w-max">
 
         <!-- Partner 1 -->
         <div class="partner-card group relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl
@@ -585,9 +886,10 @@
                     shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
                     hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
                     hover:bg-white/10 transition-all duration-300">
-          <img src="images/digital_minds_africa_logo_v3.svg"
-               alt="Digital Minds Africa" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
-          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Digital Minds</span>
+          <div class="w-full h-20 flex items-center justify-center rounded-xl bg-white/90 p-2">
+            <img src="images/Bulindo_logo.png" alt="Bulindo Villas" class="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </div>
+          <span class="text-gray-500 text-xs text-center group-hover:text-gray-300 transition-colors duration-300">Bulindo Villas</span>
         </div>
 
         <!-- Partner 2 -->
@@ -596,9 +898,10 @@
                     shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
                     hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
                     hover:bg-white/10 transition-all duration-300">
-          <img src="https://furahatechnologies.com/img/logo.png"
-               alt="Partner 2" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
-          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Furaha Technologies</span>
+          <div class="w-full h-20 flex items-center justify-center rounded-xl bg-white/90 p-2">
+            <img src="images/legacytrust.png" alt="Legacy Trust SACCO" class="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </div>
+          <span class="text-gray-500 text-xs text-center group-hover:text-gray-300 transition-colors duration-300">Legacy Trust SACCO</span>
         </div>
 
         <!-- Partner 3 -->
@@ -607,11 +910,10 @@
                     shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
                     hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
                     hover:bg-white/10 transition-all duration-300">
-          <picture>
-            <source srcset="images/Bulindo_logo.webp" type="image/webp">
-            <img src="images/Bulindo_logo.jpeg" alt="Bulindo Villas" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
-          </picture>
-          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Bulindo Villas</span>
+          <div class="w-full h-20 flex items-center justify-center rounded-xl bg-white/90 p-2">
+            <img src="images/rcdnetcopy.png" alt="Rwenzori Community Development Network" class="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </div>
+          <span class="text-gray-500 text-xs text-center group-hover:text-gray-300 transition-colors duration-300">RCDNet</span>
         </div>
 
         <!-- Partner 4 -->
@@ -620,52 +922,10 @@
                     shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
                     hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
                     hover:bg-white/10 transition-all duration-300">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABc
-          CAMAAADUMSJqAAABLFBMVEX///8ruumKyiMjmjL6kwAAjwAAiAAAhgD7
-          /Pv6kQAAjQD2+fbZ5tv2+/AahSvo9vzU5dZ3xADt7ey8vbkAlBwAteh/xg
-          Dq8OoPlSPk7eQ8l0B/vH3g4d/FxsPR0s/N4M5/uIO9177E2cXu9+Zsr2/E5
-          vaQvZJfxeugyKL5iwD+9/L70K3j8dWIvIyq2HWPzjpdp2Gi1Geu2X+r0a+w
-          sa08oEZIolBGnzF8sCtpqSwAkzZYpi+gvyXPzhvbzxEcjS1Tmy23wB3q2hA
-          TeCeapRsriTkxgyviyz3VzFiaup767tX/338AhBv85aH81TJ5ze2c2PD57L
-          n+2lO63pL5mjH7uH7X7MGYz03938nK5Kr6p1E2pmxAratwuUD6wY0MsdH6s
-          GwPoHpMqx4bp5qHRSluAAAGNUlEQVRoge1Y+3eaSBgdQRAdSRBRBuMDEAmJ
-          oChCdtPuum321fSRbE00pm2aTf///2G/QU1MTs8eSeyenj3eH3gMcGfmzv3
-          mmwGhDTb4NmhI34pZdUJFiQJ1/czY8InCAhRimcJaqRs6kLJzQCXe2uTRQI
-          4588EPP7KHh8BPokB7OrO6kGOGZ89/+vn5wSGVh7WMJ8qPbcIt9BgCtra2f
-          nnx8qdntPUcsZ8qPowkFWXr6OhoKwZc/PryBVF8Az+ROkbe++1oa3inDbv1
-          +x9/5tfBHOPVG/YeouPXa+P+T8nJk8m3Y8z8YPoRuzAkODPy3r6DUiw2KcT
-          k3EKqBEildk9O4xo0MDyh4WOZYO+/3ov9XpcpU3Qf0fKT1BxQxUmL8uctRd
-          FpYIru2/dugZmhPHoEeauUukMpdboNZUYDDm6/3H/9zi0vyF2UKJawaVvCd
-          uoBTmMOsQNKjI6PmwtyRtw/O2/vr0zeyJGchnYfkJdSLYTGQM0wk0l5suDu
-          oYtseu9i9aaHrOI81OWk1QJlmu64w9w2mqoyRufp9FkCXWzCWuieLq0lXfG
-          0u0TfRGfp9HkCcomwBC/p0qKFecfTdzwnzhPTW/YJ2t9LZxOoghDLchI6nS
-          uyK8zmXk7hKBQbpkNxUl4YsZ1Np1cfT0R1IfZC9FO4DxSFi2zDNA0ngjocK
-          OqU50YEyS+TcFNdfITmFkSCz3H6bdpRdzjOF1A/JofwvExn24nIQZccngdp
-          KfWBC+n0LQX2THKJVZ7NLFPuUMmTqYKQTjjz1oylj6C6MYwVz7EGPP50Z0R
-          weRIjUjQU4t2ZsXSCLY6LHNN0/Bxn4d5deKKrbPYqIbkAGUFYMuNnEs4TWz
-          5SFnMWNSKVPJERKUAXdTlIP8O03XACqEFbCs8plTypKpAfFCVYDtLSR8niM
-          jxna92l4HfRxV76OjG5wJIdMGOcMGb4m/OxGpKbRavpFIao5IlVobqEGG23
-          Wqcnu/MKiAnRpcyImd5o7LpNhK4TG5HCVLjFclBo7VL6LzZC1g2l7riLeWw
-          /mzA8Z8As0R3dsnTbgMDZpvSHlk9o4ECDL9pX59fXV+12Nml4zmARohCAop
-          DQy6NWqvSFIzdlBuLm/CydzcJ8FR+OH0NuKEThcpQ/B1Ohn9/e/UzYwkTcv
-          8zu7e1R6viY3IgUmPXthqpijFXJsdict7374WYiXoH3ri72Y1y0z8+S5Ikl
-          0HlQbLoUTSQ0/Cj/5VPz8vJCQFiTAHkVhlV4hFcomtNet1yYgZlMRc02xu1
-          j1bBCwmcAOSX0bemRa/RpYdIBN8drNnfa6fVddV/yIt8LzDygYThWRHKPJM
-          fNBz0ZjyVDu7/kV9e3Tt/gW0EILAv2yJ7+te2aY2m436dDPX3M2lmIcsOhY
-          qEK+Rq5nsmLNOkj1Ltd9ePedFVyg9chl2mowmIkYLramlcSn3UeyGnWn5HHZ
-          WJh5U4YvB8vgCqsoIUVVbX4jA9ubkS8AkLF5J0JpH0gF0YwtwvjSbk7WbHt
-          QqjwPixOKkOtQvLCkAQGS1SNHxoOH83I+26hQ8lH5ekYMkenPOmPV2w6tlm
-          Ft4E84iXoBywMAz6wediyeHzei8lRvzDudDHTdd0Jg/DqslA0WAKy0NVowE
-          MnpIytZyDpGRkzJu8g4J101TLThbOQQHOBjlGFB7doPi+Z0Adag8NDevYy0
-          kxz2HbBHhEzM8OIhf6q5GbGsn3ejwdUGeIK79lkiFXohpfzYyvGTuzDBnRU
-          6E1HIySWmZG7GrnmDfkhNFe3MAr8QNAzOQvso1n8G09Ar3xN7FEVhA5UMWU
-          KDNyMu8yqA/o/gqo1jCAIHAo4Gw1tHT+JVNPZCTnuIAx939+JYfl+FB7A7i
-          vUncf/QWsEju4FD9PaHbBkBB68kfwXpkCT5UpfYbUhreVP2hogf/USoerDI
-          kG+vb334r+gWpTrdbkq1+Fck+VqdSDXoQTLg2q1jmu1+ClcDtCAvlTDcAvv
-          VlciF+qDerFYGxTrslCrFeFzuC7Wq7hWrw2QXIRn8HQg15A8GOBidVAf1OD
-          5YCVyuViFltXqcJSLMpBUq8VqVZYFaHIV0ev4Kaoh6Bi0gPaUvrOiMMs1fS9G2GCDDTbYYIPvDf8Al+LMVww5NYYAAAAASUVORK5CYII="
-               alt="Partner 4" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
-          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Skoolnet Ug</span>
+          <div class="w-full h-20 flex items-center justify-center rounded-xl bg-white/90 p-2">
+            <img src="images/rozeralogo.png" alt="Rozera Gardens" class="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </div>
+          <span class="text-gray-500 text-xs text-center group-hover:text-gray-300 transition-colors duration-300">Rozera Gardens</span>
         </div>
 
         <!-- Partner 5 -->
@@ -674,11 +934,10 @@
                     shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
                     hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
                     hover:bg-white/10 transition-all duration-300">
-          <picture>
-            <source srcset="images/Alloto3.webp" type="image/webp">
-            <img src="images/Alloto3.jpeg" alt="Alloto Exclusives" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
-          </picture>
-          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">Alloto Exclusives</span>
+          <div class="w-full h-20 flex items-center justify-center rounded-xl bg-white/90 p-2">
+            <img src="images/Alloto3.png" alt="Alloto Exclusives" class="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </div>
+          <span class="text-gray-500 text-xs text-center group-hover:text-gray-300 transition-colors duration-300">Alloto Exclusives</span>
         </div>
 
         <!-- Partner 6 -->
@@ -687,9 +946,10 @@
                     shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
                     hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
                     hover:bg-white/10 transition-all duration-300">
-                   <i class="fa-brands fa-github"></i>
-               
-          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300"></span>
+          <div class="w-full h-20 flex items-center justify-center rounded-xl bg-white/90 p-2">
+            <img src="images/TownEyeClinic.png" alt="Town Eye Clinic" class="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </div>
+          <span class="text-gray-500 text-xs text-center group-hover:text-gray-300 transition-colors duration-300">Town Eye Clinic</span>
         </div>
 
         <!-- Partner 7 -->
@@ -698,11 +958,10 @@
                     shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
                     hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
                     hover:bg-white/10 transition-all duration-300">
-          <picture>
-            <source srcset="images/lims.webp" type="image/webp">
-            <img src="images/lims.jpeg" alt="LIMS" class="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
-          </picture>
-          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300">LIMS</span>
+          <div class="w-full h-20 flex items-center justify-center rounded-xl bg-white/90 p-2">
+            <img src="images/santelogo.png" alt="Santé" class="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </div>
+          <span class="text-gray-500 text-xs text-center group-hover:text-gray-300 transition-colors duration-300">Santé</span>
         </div>
 
         <!-- Partner 8 -->
@@ -711,12 +970,13 @@
                     shadow-[4px_4px_16px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.04)]
                     hover:shadow-[0_0_0_2px_#FF5252,4px_4px_20px_rgba(0,0,0,0.5)]
                     hover:bg-white/10 transition-all duration-300">
-
-                    <i class="fa-brands fa-docker"></i>
-          
-          <span class="text-gray-500 text-xs group-hover:text-gray-300 transition-colors duration-300"></span>
+          <div class="w-full h-20 flex items-center justify-center rounded-xl bg-white/90 p-2">
+            <img src="images/Algosys-logo.png" alt="Algosys" class="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" loading="lazy"/>
+          </div>
+          <span class="text-gray-500 text-xs text-center group-hover:text-gray-300 transition-colors duration-300">Algosys</span>
         </div>
 
+      </div>
       </div>
     </div>
   </section>
@@ -733,7 +993,7 @@
         <h3 class="text-primary-500 text-xl mb-4">Contact Me</h3>
         <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">What can I build for you today?</h2>
         <p class="text-gray-400 max-w-2xl mx-auto">
-          Have a project in mind? Fill out the form and I'll get back to you. Let's build something great.
+          Have a project in mind or a role to fill? Send a message, call or WhatsApp me and I'll get back to you.
         </p>
       </div>
 
@@ -763,7 +1023,7 @@
             </div>
             <div>
               <h3 class="text-2xl font-bold text-white mb-2">Email</h3>
-              <p class="text-gray-400">tayebwa.tsm@gmail.com</p>
+              <a href="mailto:tayebwa.tsm@gmail.com" class="text-gray-400 hover:text-primary-500 transition-colors">tayebwa.tsm@gmail.com</a>
             </div>
           </div>
 
@@ -776,7 +1036,18 @@
             </div>
             <div>
               <h3 class="text-2xl font-bold text-white mb-2">Phone</h3>
-              <p class="text-gray-400">+2556 773 630874</p>
+              <a href="tel:+256707314841" class="text-gray-400 hover:text-primary-500 transition-colors">+256 707 314 841</a>
+            </div>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="flex items-center gap-6">
+            <div class="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0">
+              <i class="fab fa-whatsapp text-2xl text-primary-500"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">WhatsApp</h3>
+              <a href="https://wa.me/256773630874" target="_blank" rel="noopener" class="text-gray-400 hover:text-primary-500 transition-colors">+256 773 630 874</a>
             </div>
           </div>
         </div>
@@ -833,17 +1104,18 @@
         </div>
         <!-- Social Media Links (Footer, bottom right) -->
         <div class="flex items-center space-x-4 mt-4 md:mt-0">
-          <a href="https://www.instagram.com/tayebw_a?igsh=MTJodzlpcGtnZnk3Zw==" class="social-link text-gray-300 text-xl" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com/TayebwaSimon7?s=09" class="social-link text-gray-300 text-xl" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           <a href="https://ug.linkedin.com/in/simon-tayebwa-690a35239" class="social-link text-gray-300 text-xl" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="https://github.com/TaYEBWA18" class="social-link text-gray-300 text-xl" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://wa.me/256773630874" class="social-link text-gray-300 text-xl" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://x.com/TayebwaSimon7?s=09" class="social-link text-gray-300 text-xl" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/tayebw_a?igsh=MTJodzlpcGtnZnk3Zw==" class="social-link text-gray-300 text-xl" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Scroll Down Indicator -->
-  <a href="#services" class="scroll-down-btn text-3xl text-gray-300 hover:text-primary-500 transition-all duration-300 animate-bounce cursor-pointer">
+  <a href="#about" class="scroll-down-btn text-3xl text-gray-300 hover:text-primary-500 transition-all duration-300 animate-bounce cursor-pointer">
     <i class="fa-solid fa-circle-down"></i>
   </a>
 
@@ -866,6 +1138,16 @@
       };
     }
 
+    // Duplicate partner cards so the marquee loops seamlessly
+    const partnersTrack = document.querySelector('.partners-track');
+    if (partnersTrack) {
+      Array.from(partnersTrack.children).forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        partnersTrack.appendChild(clone);
+      });
+    }
+
     // Mobile menu functionality
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -875,7 +1157,7 @@
     });
 
     // Sections array used by both scroll functionality and navigation
-    const sections = ['home', 'about', 'portfolio', 'services', 'partners'];
+    const sections = ['home', 'about', 'experience', 'portfolio', 'skills', 'services', 'awards', 'partners', 'contact'];
     const scrollButton = document.querySelector('.scroll-down-btn');
 
     // Optimized smooth scroll functionality
@@ -1063,56 +1345,6 @@
         item.style.transition = 'all 0.4s ease-in-out';
     });
 
-    // Optimized Progress Bar Animation
-    function animateProgressBars() {
-        const progressBars = document.querySelectorAll('.progress-bar');
-        let animationRunning = false;
-
-        if (animationRunning) return;
-        animationRunning = true;
-        
-        progressBars.forEach(bar => {
-            const target = bar.getAttribute('data-progress');
-            let width = 0;
-            const duration = 1500;
-            const startTime = performance.now();
-
-            function animate(currentTime) {
-                const elapsedTime = currentTime - startTime;
-                const progress = Math.min(elapsedTime / duration, 1);
-                width = progress * target;
-                bar.style.width = `${width}%`;
-
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                } else {
-                    animationRunning = false;
-                }
-            }
-
-            requestAnimationFrame(animate);
-        });
-    }
-
-    // Intersection Observer for Progress Bars
-    const skillsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateProgressBars();
-                skillsObserver.unobserve(entry.target);
-            }
-        });
-    }, { 
-        threshold: 0.5,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    // Observe the skills section
-    const skillsSection = document.querySelector('.skill-item');
-    if (skillsSection) {
-        skillsObserver.observe(skillsSection);
-    }
-
     // Email sending functionality
     async function sendEmail(e) {
       e.preventDefault();
@@ -1175,6 +1407,30 @@
   </div>
 
   <style>
+    /* Partners Marquee */
+    .partners-marquee {
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+      mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    }
+    .partners-track {
+      animation: partners-scroll 30s linear infinite;
+    }
+    .partners-marquee:hover .partners-track {
+      animation-play-state: paused;
+    }
+    .partners-track .partner-card {
+      flex: 0 0 auto;
+      width: 11rem;
+    }
+    @keyframes partners-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - 0.75rem)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .partners-track { animation: none; }
+      .partners-marquee { overflow-x: auto; }
+    }
+
     /* Canva Modal Styles */
     #canva-modal {
       animation: fadeIn 0.3s;
